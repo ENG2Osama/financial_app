@@ -1,3 +1,8 @@
+import 'dart:math';
+
+import 'package:financial_app/core/constants/appColors.dart';
+import 'package:financial_app/core/theme/appTheme.dart';
+import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,24 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: appTheme.lightTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -86,8 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
@@ -104,10 +90,38 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            const Text('You have pushed the button this many times:'),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.bodyMedium,
+                minimumSize: Size(340, 56),
+                //    foregroundColor: Colors.black,
+              ),
+              onPressed: () {},
+              child: Text('Next'),
+            ),
+            buttomprimary(
+              txt: 'txt',
+              fun: () {
+                log(1);
+              },
+            ),
+            MaterialButton(
+              onPressed: () {},
+              shape: BeveledRectangleBorder(),
+              child: Text('Next'),
             ),
           ],
         ),
