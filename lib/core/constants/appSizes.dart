@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class appsizes {
   static double borderRadius = 100.0;
   static int padding = 16;
