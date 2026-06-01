@@ -5,6 +5,24 @@ class homepageview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('osama')));
+    return Scaffold(
+      body: Text('data'),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.abc_outlined),
+            label: 'Banking',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.food_bank_sharp),
+            label: 'Banking',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.food_bank_sharp),
+            label: 'Banking',
+          ),
+        ],
+      ),
+    );
   }
 }
