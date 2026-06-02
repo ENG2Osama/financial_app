@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class textthemelight {
   static TextTheme textTheme = TextTheme(
-    bodyLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+    bodyLarge: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.bold),
     bodyMedium: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,

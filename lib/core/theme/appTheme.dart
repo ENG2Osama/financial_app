@@ -21,5 +21,12 @@ class appTheme {
         foregroundColor: appcolors.secondary,
       ),
     ),
+    scaffoldBackgroundColor: appcolors.background,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      elevation: 0,shadowColor:appcolors.shadow,
+      backgroundColor: appcolors.bgLight,
+
+    )
   );
 }

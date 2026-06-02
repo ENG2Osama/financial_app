@@ -14,9 +14,7 @@ void main() {
         designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (_, child) {
-          return MaterialApp(home: child);
-        },
+
         child: homePage(),
       ),
     ),
@@ -30,7 +28,7 @@ class homePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.onboarding,
+      initialRoute: namePages.homePage,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

@@ -1,3 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-class homePageModel extends ChangeNotifier {}
+class homePageModel  {
+  int index=0;
+
+}

@@ -4,10 +4,12 @@ import 'package:financial_app/feature/onboarding/viewmodel/onboarding_viewmodel.
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../feature/homePage/viewModel/homePageViewModel.dart';
+
 class ListChangeProvider {
   static List<SingleChildWidget> ListProvider = [
     //add ChangeNotifierProvider here
-    ChangeNotifierProvider(create: (context) => homePageModel()),
+    ChangeNotifierProvider(create: (context) => homePageViewModel()),
     ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
     ChangeNotifierProvider(create: (_) => LoginViewModel()),
   ];
