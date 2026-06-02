@@ -18,18 +18,18 @@ class customerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child:Padding(
-        padding:  EdgeInsets.all(appsizes.padding),
+        padding:  EdgeInsets.all(appSizes.padding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(backgroundColor: appcolors.bgCard,
+            CircleAvatar(backgroundColor: appColors.bgCard,
                 child: iconCard),
             SizedBox(
               height: 10.h,
             ),
             Text('$titleCard',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: appcolors.secondary
+                color: appColors.secondary
                     ,fontWeight: FontWeight.bold
               ),),
             SizedBox(

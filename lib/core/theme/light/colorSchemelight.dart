@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class colorschemelight {
   static ColorScheme colorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: appcolors.primary,
-    onPrimary: appcolors.onPrimary,
-    secondary: appcolors.secondary,
-    onSecondary: appcolors.onSecondary,
-    error: appcolors.error,
+    primary: appColors.primary,
+    onPrimary: appColors.onPrimary,
+    secondary: appColors.secondary,
+    onSecondary: appColors.onSecondary,
+    error: appColors.error,
     onError: Colors.white,
-    surface: appcolors.surface,
-    onSurface: appcolors.onSurface,
+    surface: appColors.surface,
+    onSurface: appColors.onSurface,
   );
 }

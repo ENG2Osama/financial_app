@@ -23,8 +23,8 @@ class OnboardingButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: appcolors.primary,
-          disabledBackgroundColor: appcolors.primary.withOpacity(0.6),
+          backgroundColor: appColors.primary,
+          disabledBackgroundColor: appColors.primary.withOpacity(0.6),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32.r),
@@ -36,7 +36,7 @@ class OnboardingButtonWidget extends StatelessWidget {
                 height: 22.w,
                 child: CircularProgressIndicator(
                   strokeWidth: 2.5,
-                  color: appcolors.textPrimary,
+                  color: appColors.textPrimary,
                 ),
               )
             : Text(
@@ -44,7 +44,7 @@ class OnboardingButtonWidget extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  color: appcolors.textPrimary,
+                  color: appColors.textPrimary,
                   letterSpacing: 0.2,
                 ),
               ),

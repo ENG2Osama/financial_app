@@ -14,18 +14,18 @@ class appTheme {
         minimumSize: Size(163, 56),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(appsizes.borderRadius),
+            Radius.circular(appSizes.borderRadius),
           ),
         ),
-        backgroundColor: appcolors.primary,
-        foregroundColor: appcolors.secondary,
+        backgroundColor: appColors.primary,
+        foregroundColor: appColors.secondary,
       ),
     ),
-    scaffoldBackgroundColor: appcolors.background,
+    scaffoldBackgroundColor: appColors.background,
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      elevation: 0,shadowColor:appcolors.shadow,
-      backgroundColor: appcolors.bgLight,
+      elevation: 0,shadowColor:appColors.shadow,
+      backgroundColor: appColors.bgLight,
 
     )
   );

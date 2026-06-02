@@ -12,9 +12,9 @@ class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: appcolors.background,
+      appBar: AppBar(backgroundColor: appColors.background,
         elevation: 0.5
-        ,shadowColor: appcolors.secondary
+        ,shadowColor: appColors.secondary
         ,        title: Text('Home',style: Theme.of(context).textTheme.titleLarge!.copyWith(
           fontWeight: FontWeight.bold
               ,fontSize: 32
@@ -22,8 +22,8 @@ class homePage extends StatelessWidget {
         actions: [Container(margin: EdgeInsets.all(10),
           child: CircleAvatar(
             
-            backgroundColor: appcolors.secondary,
-            foregroundColor:appcolors.onSecondary ,
+            backgroundColor: appColors.secondary,
+            foregroundColor:appColors.onSecondary ,
             child: IconButton(
               iconSize: 23,
               icon: Icon(Icons.person,)
@@ -40,7 +40,7 @@ class homePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(appsizes.padding ),
+          padding: EdgeInsets.all(appSizes.padding ),
             child: 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +49,7 @@ class homePage extends StatelessWidget {
               height: 5.h,
             ),
             Text('Welcome',style:Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: appcolors.textHint,
+              color: appColors.textHint,
               fontWeight: FontWeight.w500
             ))
             ,
@@ -91,8 +91,8 @@ shape: RoundedRectangleBorder(
                 )),
                 ElevatedButton(
                   style:ElevatedButton.styleFrom(
-                 backgroundColor   : appcolors.secondary,
-                   foregroundColor   : appcolors.onSecondary
+                 backgroundColor   : appColors.secondary,
+                   foregroundColor   : appColors.onSecondary
 
                   ) ,
                     onPressed: (){}, child: Row(
@@ -101,7 +101,7 @@ shape: RoundedRectangleBorder(
 
                     Text(" Receive Money",style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       fontSize: 14,
-                      color: appcolors.onSecondary
+                      color: appColors.onSecondary
                     ),),
                   ],
                 ))
@@ -119,16 +119,16 @@ mainAxisSpacing: 10
 
               ),
                 children: [
-                  customerCard(iconCard: Icon(Icons.history,color: appcolors.secondary,),
+                  customerCard(iconCard: Icon(Icons.history,color: appColors.secondary,),
                     titleCard: 'Previous Activity',
                     subtitleCard: "View History",)
-              ,customerCard(iconCard: Icon(Icons.account_balance,color: appcolors.secondary,),
+              ,customerCard(iconCard: Icon(Icons.account_balance,color: appColors.secondary,),
                     titleCard: 'Link Bank',
                     subtitleCard: "Connect accounts",)
-              ,    customerCard(iconCard: Icon(Icons.tune,color: appcolors.secondary,),
+              ,    customerCard(iconCard: Icon(Icons.tune,color: appColors.secondary,),
                     titleCard: 'Spending Limits',
                     subtitleCard: "Manage controls",),
-                  customerCard(iconCard: Icon(Icons.lock,color: appcolors.secondary,),
+                  customerCard(iconCard: Icon(Icons.lock,color: appColors.secondary,),
                     titleCard: 'Security ',
                     subtitleCard: "App protection",),
 

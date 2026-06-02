@@ -28,7 +28,7 @@ class _LoginContent extends StatelessWidget {
     final vm = context.watch<LoginViewModel>();
 
     return Scaffold(
-      backgroundColor: appcolors.bgLight,
+      backgroundColor: appColors.bgLight,
       body: SafeArea(
         child: Form(
           key: vm.formKey,
@@ -45,7 +45,7 @@ class _LoginContent extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 36.sp,
                     fontWeight: FontWeight.w800,
-                    color: appcolors.textPrimary,
+                    color: appColors.textPrimary,
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -57,7 +57,7 @@ class _LoginContent extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w400,
-                    color: appcolors.textSecondary,
+                    color: appColors.textSecondary,
                   ),
                 ),
 
@@ -69,7 +69,7 @@ class _LoginContent extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
-                    color: appcolors.textPrimary,
+                    color: appColors.textPrimary,
                   ),
                 ),
 
@@ -92,7 +92,7 @@ class _LoginContent extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
-                    color: appcolors.textPrimary,
+                    color: appColors.textPrimary,
                   ),
                 ),
 
@@ -111,7 +111,7 @@ class _LoginContent extends StatelessWidget {
                       vm.obscurePassword
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: appcolors.textHint,
+                      color: appColors.textHint,
                       size: 20.sp,
                     ),
                   ),
@@ -133,7 +133,7 @@ class _LoginContent extends StatelessWidget {
                       style: GoogleFonts.inter(
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w600,
-                        color: appcolors.textPrimary,
+                        color: appColors.textPrimary,
                       ),
                     ),
                   ),
@@ -145,7 +145,8 @@ class _LoginContent extends StatelessWidget {
                 CustomButtonWidget(
                   text: 'Login',
                   isLoading: vm.isLoading,
-                  onPressed: () => vm.login(context),
+                  onPressed: () =>
+                      vm.login(context),
                 ),
 
                 SizedBox(height: 24.h),
@@ -158,7 +159,7 @@ class _LoginContent extends StatelessWidget {
                       "Don't have an account? ",
                       style: GoogleFonts.inter(
                         fontSize: 14.sp,
-                        color: appcolors.textSecondary,
+                        color: appColors.textSecondary,
                       ),
                     ),
                     GestureDetector(
@@ -172,7 +173,7 @@ class _LoginContent extends StatelessWidget {
                         style: GoogleFonts.inter(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
-                          color: appcolors.textPrimary,
+                          color: appColors.textPrimary,
                         ),
                       ),
                     ),

@@ -39,17 +39,17 @@ class CustomTextFieldWidget extends StatelessWidget {
       style: GoogleFonts.inter(
         fontSize: 15.sp,
         fontWeight: FontWeight.w400,
-        color: appcolors.textPrimary,
+        color: appColors.textPrimary,
       ),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.inter(
           fontSize: 15.sp,
           fontWeight: FontWeight.w400,
-          color: appcolors.textHint,
+          color: appColors.textHint,
         ),
         filled: true,
-        fillColor: appcolors.bgCard,
+        fillColor: appColors.bgCard,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
@@ -63,17 +63,17 @@ class CustomTextFieldWidget extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appcolors.primary, width: 1.5),
+          borderSide: BorderSide(color: appColors.primary, width: 1.5),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appcolors.error, width: 1.5),
+          borderSide: BorderSide(color: appColors.error, width: 1.5),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appcolors.error, width: 1.5),
+          borderSide: BorderSide(color: appColors.error, width: 1.5),
         ),
-        errorStyle: GoogleFonts.inter(fontSize: 12.sp, color: appcolors.error),
+        errorStyle: GoogleFonts.inter(fontSize: 12.sp, color: appColors.error),
       ),
     );
   }

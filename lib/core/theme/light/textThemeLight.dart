@@ -9,12 +9,12 @@ class textthemelight {
     bodyMedium: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,
-      color: appcolors.textPrimary,
+      color: appColors.textPrimary,
     ),
     bodySmall: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w400,
-      color: appcolors.textSecondary,
+      color: appColors.textSecondary,
     ),
   );
 }

@@ -27,9 +27,9 @@ class _SignUpContent extends StatelessWidget {
     final vm = context.watch<SignUpViewModel>();
 
     return Scaffold(
-      backgroundColor: appcolors.bgWhite,
+      backgroundColor: appColors.bgWhite,
       appBar: AppBar(
-        backgroundColor: appcolors.bgWhite,
+        backgroundColor: appColors.bgWhite,
         elevation: 0,
         leadingWidth: 56.w,
         leading: Padding(
@@ -40,12 +40,12 @@ class _SignUpContent extends StatelessWidget {
               width: 40.w,
               height: 40.w,
               decoration: const BoxDecoration(
-                color: appcolors.bgCard,
+                color: appColors.bgCard,
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 Icons.arrow_back_rounded,
-                color: appcolors.textPrimary,
+                color: appColors.textPrimary,
                 size: 20.sp,
               ),
             ),
@@ -60,7 +60,7 @@ class _SignUpContent extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w600,
-                  color: appcolors.textPrimary,
+                  color: appColors.textPrimary,
                 ),
               ),
             ),
@@ -84,7 +84,7 @@ class _SignUpContent extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 36.sp,
                     fontWeight: FontWeight.w800,
-                    color: appcolors.textPrimary,
+                    color: appColors.textPrimary,
                     height: 1.15,
                     letterSpacing: -0.5,
                   ),
@@ -138,7 +138,7 @@ class _SignUpContent extends StatelessWidget {
                       vm.obscurePassword
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: appcolors.textHint,
+                      color: appColors.textHint,
                       size: 20.sp,
                     ),
                   ),
@@ -159,7 +159,7 @@ class _SignUpContent extends StatelessWidget {
                       vm.obscureConfirmPassword
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: appcolors.textHint,
+                      color: appColors.textHint,
                       size: 20.sp,
                     ),
                   ),
@@ -184,7 +184,7 @@ class _SignUpContent extends StatelessWidget {
                       'Already have an account? ',
                       style: GoogleFonts.inter(
                         fontSize: 14.sp,
-                        color: appcolors.textSecondary,
+                        color: appColors.textSecondary,
                       ),
                     ),
                     GestureDetector(
@@ -194,7 +194,7 @@ class _SignUpContent extends StatelessWidget {
                         style: GoogleFonts.inter(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
-                          color: appcolors.textPrimary,
+                          color: appColors.textPrimary,
                           decoration: TextDecoration.underline,
                         ),
                       ),

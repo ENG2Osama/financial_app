@@ -28,7 +28,7 @@ class homePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.homePage,
+      initialRoute: namePages.onboarding,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

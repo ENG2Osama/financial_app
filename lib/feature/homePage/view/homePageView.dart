@@ -23,9 +23,9 @@ class homepageview extends StatelessWidget {
           Consumer<homePageViewModel>(
             builder: (context, value, child)
           =>BottomNavigationBar(
-        selectedItemColor: appcolors.secondary,
+        selectedItemColor: appColors.secondary,
         useLegacyColorScheme: false,
-unselectedItemColor: appcolors.textHint,
+unselectedItemColor: appColors.textHint,
 showUnselectedLabels: true,
         currentIndex: value.index,
         onTap: (index){

@@ -1,3 +1,5 @@
+import 'package:financial_app/route/appRoute.dart';
+import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 
 enum LoginStatus { idle, loading, success, error }
@@ -56,8 +58,7 @@ class LoginViewModel extends ChangeNotifier {
     _status = LoginStatus.success;
     notifyListeners();
 
-    // Navigate to Home after success
-    // if (context.mounted) context.go(AppRoutes.home);
+    Navigator.of(context).pushReplacementNamed(namePages.homePage);
   }
 
   // ── Dispose ───────────────────────────────────────────────────────────────────

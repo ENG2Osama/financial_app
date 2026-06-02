@@ -40,7 +40,7 @@ class OnboardingPageWidget extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w800,
-                    color: appcolors.textPrimary,
+                    color: appColors.textPrimary,
                     height: 1.25,
                     letterSpacing: -0.3,
                   ),
@@ -52,7 +52,7 @@ class OnboardingPageWidget extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
-                    color: appcolors.textSecondary,
+                    color: appColors.textSecondary,
                     height: 1.6,
                   ),
                 ),

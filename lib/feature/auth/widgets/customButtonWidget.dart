@@ -27,8 +27,8 @@ class CustomButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? appcolors.primary,
-          disabledBackgroundColor: (backgroundColor ?? appcolors.primary)
+          backgroundColor: backgroundColor ?? appColors.primary,
+          disabledBackgroundColor: (backgroundColor ?? appColors.primary)
               .withOpacity(0.6),
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -41,7 +41,7 @@ class CustomButtonWidget extends StatelessWidget {
                 height: 22.w,
                 child: CircularProgressIndicator(
                   strokeWidth: 2.5,
-                  color: textColor ?? appcolors.textPrimary,
+                  color: textColor ?? appColors.textPrimary,
                 ),
               )
             : Text(
@@ -49,7 +49,7 @@ class CustomButtonWidget extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  color: textColor ?? appcolors.textPrimary,
+                  color: textColor ?? appColors.textPrimary,
                   letterSpacing: 0.2,
                 ),
               ),
