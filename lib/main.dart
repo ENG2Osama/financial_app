@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:financial_app/core/constants/appColors.dart';
 import 'package:financial_app/core/theme/appTheme.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
+import 'package:financial_app/feature/Send_mony/view/choicePersonView.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: appTheme.lightTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: Apptheme.lightTheme,
+      home: Choicepersonview(),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class appsizes {
+class Appsizes {
   static double borderRadius = 100.0;
-  static int padding = 16;
+  static double padding = 16;
   static int spaceSmall = 8;
   static int spaceMedium = 16;
 

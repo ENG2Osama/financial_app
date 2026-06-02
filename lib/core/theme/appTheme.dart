@@ -4,9 +4,9 @@ import 'package:financial_app/core/theme/light/colorSchemelight.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:flutter/material.dart';
 
-class appTheme {
+class Apptheme {
   static ThemeData lightTheme = ThemeData(
-    textTheme: textthemelight.textTheme,
+    textTheme: Textthemelight.textTheme,
     colorScheme: colorschemelight.colorScheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -14,7 +14,7 @@ class appTheme {
         minimumSize: Size(163, 56),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(appsizes.borderRadius),
+            Radius.circular(Appsizes.borderRadius),
           ),
         ),
         backgroundColor: appcolors.primary,

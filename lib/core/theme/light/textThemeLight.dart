@@ -1,7 +1,7 @@
 import 'package:financial_app/core/constants/appColors.dart';
 import 'package:flutter/material.dart';
 
-class textthemelight {
+class Textthemelight {
   static TextTheme textTheme = TextTheme(
     bodyLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
     bodyMedium: TextStyle(
