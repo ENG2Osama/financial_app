@@ -57,10 +57,19 @@ shape: RoundedRectangleBorder(
                   children: [
                     Text('$title'
                       ,style: Theme.of(context).
-                      textTheme.bodyMedium,),
+                      textTheme.bodySmall!.copyWith(
+                        fontSize: 16.sp
+                            ,
+                        color: appColors.secondary
+                          ,
+                        fontWeight: FontWeight.bold
+                      ),),
                     Text('$subTitle'
                       ,style: Theme.of(context).
-                      textTheme.bodySmall,),
+                      textTheme.bodySmall!.copyWith(
+                            fontSize: 13.sp
+
+                        ),),
                   ],
                 ),
                 trailing: Container(margin: EdgeInsets.only(right: 10),
@@ -69,7 +78,7 @@ shape: RoundedRectangleBorder(
                     children: [
                       Text('$minAgo min ago'
                         ,style: Theme.of(context).
-                        textTheme.bodySmall!.copyWith(fontSize: 16,
+                        textTheme.bodySmall!.copyWith(fontSize: 13.sp,
                         fontWeight: FontWeight.w700),),
                       Container(
                         margin: EdgeInsets.only(top: 10),

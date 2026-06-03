@@ -1,6 +1,7 @@
 import 'package:financial_app/core/constants/appColors.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/feature/homePage/widgets/customerCard.dart';
+import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,24 +20,25 @@ class homePage extends StatelessWidget {
         ,shadowColor: appColors.secondary
         ,        title: Text('Home',style: Theme.of(context).textTheme.titleLarge!.copyWith(
           fontWeight: FontWeight.bold
-              ,fontSize: 32
+              ,fontSize: 30.sp
         ),),
         actions: [Container(margin: EdgeInsets.all(10),
           child: CircleAvatar(
             
             backgroundColor: appColors.secondary,
-            foregroundColor:appColors.onSecondary ,
+            foregroundImage: AssetImage("assets/images/download.png"),
             child: IconButton(
               iconSize: 23,
               icon: Icon(Icons.person,)
                 ,
               onPressed: (){
+                Navigator.of(context).pushNamed(namePages.profileView);
           
               },
             ),
           ),
         )],
-        leading: IconButton(iconSize: 27,
+        leading: IconButton(iconSize: 30,
             onPressed: (){}, icon: Icon(Icons.format_list_bulleted)),
 
       ),

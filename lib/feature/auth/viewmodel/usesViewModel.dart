@@ -33,6 +33,8 @@ void allUser(UserModel newUser){
         email: element["email"],
         password: element["password"],
         Balance: element["balance"],
+          country: element["country"],
+        phone: element["phone"]
       );
 
 
@@ -48,7 +50,11 @@ void allUser(UserModel newUser){
 
   }
 get Balance=>_userModel?.Balance ?? 0.0;
-get firstName=>_userModel?.firstName ?? " o";
+get firstName=>_userModel?.firstName ?? " ";
+get lastName=>_userModel?.lastName ?? " ";
+get phone=>_userModel?.phone ?? " ";
+get country=>_userModel?.country ?? " ";
+get email=>_userModel?.email ?? " ";
 
 
 

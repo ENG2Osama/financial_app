@@ -7,7 +7,7 @@ class textthemelight {
         fontSize: 32,
         fontWeight: FontWeight.bold),
     bodyMedium: TextStyle(
-      fontSize: 20,
+      fontSize: 26,
       fontWeight: FontWeight.bold,
       color: appColors.textPrimary,
     ),

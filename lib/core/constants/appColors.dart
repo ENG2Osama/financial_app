@@ -13,7 +13,7 @@ class appColors {
   static Color textLight = Color(0xfffffffff);
   static Color border = Color(0xffe5e5e5e);
   static Color succe = Color(0xff22c55e);
-  static Color error = Color(0xffef4444);
+  static Color error = Colors.red;
   static Color warning = Color(0xfff59e0b);
   static Color info = Color(0xff3b82f6);
   static Color inactiveIcon = Color(0xff9e9e9e);

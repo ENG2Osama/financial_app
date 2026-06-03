@@ -89,12 +89,15 @@ class SignUpViewModel extends ChangeNotifier {
     notifyListeners();
 
     await Future.delayed(const Duration(seconds: 2));
-    context.read<userViewModel>().allUser(UserModel(
+    context.read<userViewModel>().allUser(
+        UserModel(
         firstName: firstNameController.text.trim(),
         lastName: lastNameController.text.trim(),
         email: emailController.text.trim(),
         password: passwordController.text
-        ,Balance: 0.0
+        ,Balance: 0.0,
+          phone: "There is NO",
+          country: "There is NO"
     ));
 //osa@gmail.com
 

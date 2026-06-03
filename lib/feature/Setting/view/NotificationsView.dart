@@ -1,9 +1,9 @@
 import 'package:financial_app/core/constants/appSizes.dart';
-import 'package:financial_app/feature/homePage/widgets/customerCardNotifications.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/appColors.dart';
+import '../widget/customerCardNotifications.dart';
 
 class notification extends StatelessWidget {
   const notification({super.key});

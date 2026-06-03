@@ -5,8 +5,9 @@ import 'package:financial_app/feature/onboarding/view/onboarding_view.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 
-import '../feature/homePage/view/NotificationsView.dart';
-import '../feature/homePage/view/ProfileView.dart';
+import '../feature/Setting/view/NotificationsView.dart';
+import '../feature/Setting/view/ProfileView.dart';
+
 
 class appRoute {
   static Map<String, WidgetBuilder> routes = {
