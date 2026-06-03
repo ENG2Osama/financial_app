@@ -10,7 +10,7 @@ class Textthemelight {
       color: appcolors.textPrimary,
     ),
     bodySmall: TextStyle(
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: FontWeight.w400,
       color: appcolors.textSecondary,
     ),

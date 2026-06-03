@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:financial_app/core/theme/appTheme.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/feature/Send_mony/view/choicePersonView.dart';
+import 'package:financial_app/route/appRoute.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: Apptheme.lightTheme,
+      routes: Approute.routesList,
       home: Choicepersonview(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
