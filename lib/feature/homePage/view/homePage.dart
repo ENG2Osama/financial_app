@@ -1,8 +1,10 @@
 import 'package:financial_app/core/constants/appColors.dart';
+import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/feature/homePage/widgets/customerCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/appSizes.dart';
 
@@ -53,9 +55,12 @@ class homePage extends StatelessWidget {
               fontWeight: FontWeight.w500
             ))
             ,
-            Text('Osama',style:Theme.of(context).textTheme.bodyMedium!.copyWith(
-              fontWeight: FontWeight.w700
-            ))
+            Selector<userViewModel,String>(builder: (context, value, child) =>
+            Text('${value}',style:Theme.of(context).textTheme.bodyMedium!.copyWith(
+                fontWeight: FontWeight.w700
+            ))  , selector:(context, value) =>value.firstName ,
+        )
+
 ,   SizedBox(
               height: 15.h,
             ),
@@ -70,7 +75,17 @@ shape: RoundedRectangleBorder(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Available Balance',style:Theme.of(context).textTheme.bodySmall),
-                      Text('\$0.00',style:Theme.of(context).textTheme.bodyLarge)
+                      Selector<userViewModel,double>(builder: (context, value, child) =>
+                          Text('\$$value',style:Theme.of(context).textTheme.bodyLarge)
+                        , selector:(context, value){
+                            print("home vm ${value.hashCode}");
+                    print(value.Balance);
+                            final vm = context.read<userViewModel>();
+                            print("Home VM: ${vm.hashCode}");
+                        return value.Balance;
+                      }
+                      )
+
                     ],
                   ),),
               ),

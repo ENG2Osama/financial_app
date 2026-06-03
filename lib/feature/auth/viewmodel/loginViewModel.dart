@@ -1,12 +1,15 @@
+import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/route/appRoute.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 enum LoginStatus { idle, loading, success, error }
 
 class LoginViewModel extends ChangeNotifier {
   // ── Form key ──────────────────────────────────────────────────────────────────
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  userViewModel _userViewModel=userViewModel();
 
   // ── Controllers ───────────────────────────────────────────────────────────────
   final TextEditingController emailController = TextEditingController();
@@ -45,6 +48,11 @@ class LoginViewModel extends ChangeNotifier {
   // ── Submit ────────────────────────────────────────────────────────────────────
   Future<void> login(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
+    bool isfound=context.read<userViewModel>().foundUser(emailController.text.trim(), passwordController.text.trim());
+if(isfound)return;
+
+
+
 
     _status = LoginStatus.loading;
     _errorMessage = null;
@@ -53,7 +61,6 @@ class LoginViewModel extends ChangeNotifier {
     // Simulate network call — replace with real API
     await Future.delayed(const Duration(seconds: 2));
 
-    debugPrint('✅ Login: ${emailController.text.trim()}');
 
     _status = LoginStatus.success;
     notifyListeners();

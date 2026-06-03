@@ -12,10 +12,7 @@ class SignUpPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SignUpViewModel(),
-      child: const _SignUpContent(),
-    );
+    return _SignUpContent();
   }
 }
 

@@ -13,10 +13,7 @@ class LoginPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => LoginViewModel(),
-      child: const _LoginContent(),
-    );
+    return  _LoginContent();
   }
 }
 

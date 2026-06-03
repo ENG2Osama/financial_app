@@ -91,10 +91,9 @@ class SignUpViewModel extends ChangeNotifier {
       firstName: firstNameController.text.trim(),
       lastName: lastNameController.text.trim(),
       email: emailController.text.trim(),
-      password: passwordController.text,
+      password: passwordController.text,Balance: 0.0
     );
 
-    debugPrint('✅ User registered: ${user.toMap()}');
 
     _status = SignUpStatus.success;
     notifyListeners();
