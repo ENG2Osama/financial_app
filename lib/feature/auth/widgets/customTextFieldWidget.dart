@@ -1,7 +1,6 @@
-import 'package:financial_app/core/constants/appColors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../../../core/constants/appColors.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -11,8 +10,6 @@ class CustomTextFieldWidget extends StatelessWidget {
   final TextInputAction textInputAction;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
-  final Widget? prefixIcon;
-  final bool enabled;
 
   const CustomTextFieldWidget({
     super.key,
@@ -23,8 +20,6 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.textInputAction = TextInputAction.next,
     this.validator,
     this.suffixIcon,
-    this.prefixIcon,
-    this.enabled = true,
   });
 
   @override
@@ -35,45 +30,56 @@ class CustomTextFieldWidget extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       validator: validator,
-      enabled: enabled,
-      style: GoogleFonts.inter(
-        fontSize: 15.sp,
-        fontWeight: FontWeight.w400,
+      style:  TextStyle(
+        fontSize: 15,
         color: appColors.textPrimary,
       ),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: GoogleFonts.inter(
-          fontSize: 15.sp,
-          fontWeight: FontWeight.w400,
+        hintStyle: const TextStyle(
+          fontSize: 15,
           color: appColors.textHint,
         ),
         filled: true,
         fillColor: appColors.bgCard,
         suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 18,
+        ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.r),
+          borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.r),
+          borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appColors.primary, width: 1.5),
+          borderRadius: BorderRadius.circular(14),
+          borderSide:  BorderSide(
+            color: appColors.primary,
+            width: 1.5,
+          ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appColors.error, width: 1.5),
+          borderRadius: BorderRadius.circular(14),
+          borderSide:  BorderSide(
+            color: appColors.error,
+            width: 1.5,
+          ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.r),
-          borderSide: BorderSide(color: appColors.error, width: 1.5),
+          borderRadius: BorderRadius.circular(14),
+          borderSide:  BorderSide(
+            color: appColors.error,
+            width: 1.5,
+          ),
         ),
-        errorStyle: GoogleFonts.inter(fontSize: 12.sp, color: appColors.error),
+        errorStyle:  TextStyle(
+          fontSize: 12,
+          color: appColors.error,
+        ),
       ),
     );
   }

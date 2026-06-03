@@ -17,33 +17,40 @@ class customerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child:Padding(
-        padding:  EdgeInsets.all(appSizes.padding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CircleAvatar(backgroundColor: appColors.bgCard,
-                child: iconCard),
-            SizedBox(
-              height: 10.h,
-            ),
-            Text('$titleCard',
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: appColors.secondary
-                    ,fontWeight: FontWeight.bold
-              ),),
-            SizedBox(
-              height: 2.h,
-            ),
-            Text('$subtitleCard',style:
-            Theme.of(context).textTheme.bodySmall!.copyWith(
-              fontSize: 15
-            ),),
-            SizedBox(
-              height: 10.h,
-            ),
-          ],
-        ),
+
+
+        child: Padding(    padding:  EdgeInsets.all(appSizes.padding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(backgroundColor: appColors.bgCard,
+                  child: iconCard),
+              SizedBox(
+                height: 10.h,
+              ),
+              Expanded(
+                child: Text('$titleCard',overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    color: appColors.secondary
+                        ,fontWeight: FontWeight.bold
+                  ),),
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              Expanded(
+                child: Text('$subtitleCard',overflow: TextOverflow.ellipsis,
+                  style:
+                Theme.of(context).textTheme.bodySmall!.copyWith(
+                  fontSize: 14
+                ),),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+            ],
+          ),
+
       ) ,
     );
   }

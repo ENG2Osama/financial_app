@@ -6,6 +6,7 @@ import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 
 import '../feature/homePage/view/NotificationsView.dart';
+import '../feature/homePage/view/ProfileView.dart';
 
 class appRoute {
   static Map<String, WidgetBuilder> routes = {
@@ -15,5 +16,6 @@ class appRoute {
     namePages.login: (_) => LoginPageView(),
     namePages.signUp: (_) => SignUpPageView(),
     namePages.notificationPage: (_) => notification(),
+    namePages.profileView: (_) => profileView(),
   };
 }

@@ -1,23 +1,12 @@
-import 'package:financial_app/core/constants/appColors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../../core/constants/appColors.dart';
 import '../viewmodel/signUpViewModel.dart';
 import '../widgets/customTextFieldWidget.dart';
 import '../widgets/customButtonWidget.dart';
 
 class SignUpPageView extends StatelessWidget {
   const SignUpPageView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return _SignUpContent();
-  }
-}
-
-class _SignUpContent extends StatelessWidget {
-  const _SignUpContent();
 
   @override
   Widget build(BuildContext context) {
@@ -28,34 +17,28 @@ class _SignUpContent extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: appColors.bgWhite,
         elevation: 0,
-        leadingWidth: 56.w,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 16.w),
-          child: GestureDetector(
-            onTap: () => Navigator.of(context).maybePop(),
-            child: Container(
-              width: 40.w,
-              height: 40.w,
-              decoration: const BoxDecoration(
-                color: appColors.bgCard,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.arrow_back_rounded,
-                color: appColors.textPrimary,
-                size: 20.sp,
-              ),
+        leading: GestureDetector(
+          onTap: () => Navigator.maybePop(context),
+          child: Container(
+            margin: const EdgeInsets.only(left: 16),
+            decoration: const BoxDecoration(
+              color: appColors.bgCard,
+              shape: BoxShape.circle,
+            ),
+            child:  Icon(
+              Icons.arrow_back_rounded,
+              color: appColors.textPrimary,
             ),
           ),
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 20.w),
+            padding: const EdgeInsets.only(right: 20),
             child: Center(
               child: Text(
                 'Help',
-                style: GoogleFonts.inter(
-                  fontSize: 15.sp,
+                style: TextStyle(
+                  fontSize: 15,
                   fontWeight: FontWeight.w600,
                   color: appColors.textPrimary,
                 ),
@@ -69,17 +52,18 @@ class _SignUpContent extends StatelessWidget {
         child: Form(
           key: vm.formKey,
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 32.h),
 
-                // ── Title ─────────────────────────────────────────────────────
-                Text(
+                const SizedBox(height: 32),
+
+                // العنوان
+                 Text(
                   'Create your\naccount',
-                  style: GoogleFonts.inter(
-                    fontSize: 36.sp,
+                  style: TextStyle(
+                    fontSize: 34,
                     fontWeight: FontWeight.w800,
                     color: appColors.textPrimary,
                     height: 1.15,
@@ -87,47 +71,39 @@ class _SignUpContent extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 40.h),
+                const SizedBox(height: 40),
 
-                // ── First name ────────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.firstNameController,
                   hintText: 'First name',
                   keyboardType: TextInputType.name,
-                  textInputAction: TextInputAction.next,
                   validator: vm.validateFirstName,
                 ),
 
-                SizedBox(height: 14.h),
+                const SizedBox(height: 14),
 
-                // ── Last name ─────────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.lastNameController,
                   hintText: 'Last name',
                   keyboardType: TextInputType.name,
-                  textInputAction: TextInputAction.next,
                   validator: vm.validateLastName,
                 ),
 
-                SizedBox(height: 14.h),
+                const SizedBox(height: 14),
 
-                // ── Email ─────────────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.emailController,
                   hintText: 'Email address',
                   keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
                   validator: vm.validateEmail,
                 ),
 
-                SizedBox(height: 14.h),
+                const SizedBox(height: 14),
 
-                // ── Password ──────────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.passwordController,
                   hintText: 'Password',
                   obscureText: vm.obscurePassword,
-                  textInputAction: TextInputAction.next,
                   validator: vm.validatePassword,
                   suffixIcon: GestureDetector(
                     onTap: vm.togglePasswordVisibility,
@@ -136,14 +112,12 @@ class _SignUpContent extends StatelessWidget {
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
                       color: appColors.textHint,
-                      size: 20.sp,
                     ),
                   ),
                 ),
 
-                SizedBox(height: 14.h),
+                const SizedBox(height: 14),
 
-                // ── Confirm password ──────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.confirmPasswordController,
                   hintText: 'Confirm password',
@@ -157,39 +131,36 @@ class _SignUpContent extends StatelessWidget {
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
                       color: appColors.textHint,
-                      size: 20.sp,
                     ),
                   ),
                 ),
 
-                SizedBox(height: 40.h),
+                const SizedBox(height: 40),
 
-                // ── Submit button ─────────────────────────────────────────────
                 CustomButtonWidget(
                   text: 'Create account',
                   isLoading: vm.isLoading,
                   onPressed: () => vm.signUp(context),
                 ),
 
-                SizedBox(height: 24.h),
+                const SizedBox(height: 24),
 
-                // ── Login link ────────────────────────────────────────────────
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                     Text(
                       'Already have an account? ',
-                      style: GoogleFonts.inter(
-                        fontSize: 14.sp,
+                      style: TextStyle(
+                        fontSize: 14,
                         color: appColors.textSecondary,
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Text(
+                      onTap: () => Navigator.maybePop(context),
+                      child:  Text(
                         'Log In',
-                        style: GoogleFonts.inter(
-                          fontSize: 14.sp,
+                        style: TextStyle(
+                          fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: appColors.textPrimary,
                           decoration: TextDecoration.underline,
@@ -199,7 +170,8 @@ class _SignUpContent extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 32.h),
+                const SizedBox(height: 32),
+
               ],
             ),
           ),

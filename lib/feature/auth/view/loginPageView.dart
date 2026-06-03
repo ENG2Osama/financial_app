@@ -1,24 +1,13 @@
-import 'package:financial_app/core/constants/appColors.dart';
+import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../../core/constants/appColors.dart';
 import '../viewmodel/loginViewModel.dart';
 import '../widgets/customTextFieldWidget.dart';
 import '../widgets/customButtonWidget.dart';
-import 'signUpPageView.dart';
 
 class LoginPageView extends StatelessWidget {
   const LoginPageView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  _LoginContent();
-  }
-}
-
-class _LoginContent extends StatelessWidget {
-  const _LoginContent();
 
   @override
   Widget build(BuildContext context) {
@@ -30,49 +19,47 @@ class _LoginContent extends StatelessWidget {
         child: Form(
           key: vm.formKey,
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 56.h),
 
-                // ── Title ─────────────────────────────────────────────────────
-                Text(
+                const SizedBox(height: 56),
+
+                // العنوان
+                 Text(
                   'Welcome Back',
-                  style: GoogleFonts.inter(
-                    fontSize: 36.sp,
+                  style: TextStyle(
+                    fontSize: 34,
                     fontWeight: FontWeight.w800,
                     color: appColors.textPrimary,
                     letterSpacing: -0.5,
                   ),
                 ),
 
-                SizedBox(height: 8.h),
+                const SizedBox(height: 8),
 
-                Text(
+                 Text(
                   'Sign in to continue',
-                  style: GoogleFonts.inter(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w400,
+                  style: TextStyle(
+                    fontSize: 15,
                     color: appColors.textSecondary,
                   ),
                 ),
 
-                SizedBox(height: 40.h),
+                const SizedBox(height: 40),
 
-                // ── Email label ───────────────────────────────────────────────
-                Text(
+                 Text(
                   'Email',
-                  style: GoogleFonts.inter(
-                    fontSize: 13.sp,
+                  style: TextStyle(
+                    fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: appColors.textPrimary,
                   ),
                 ),
 
-                SizedBox(height: 8.h),
+                const SizedBox(height: 8),
 
-                // ── Email field ───────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.emailController,
                   hintText: 'name@example.com',
@@ -81,21 +68,19 @@ class _LoginContent extends StatelessWidget {
                   validator: vm.validateEmail,
                 ),
 
-                SizedBox(height: 20.h),
+                const SizedBox(height: 20),
 
-                // ── Password label ────────────────────────────────────────────
-                Text(
+                 Text(
                   'Password',
-                  style: GoogleFonts.inter(
-                    fontSize: 13.sp,
+                  style: TextStyle(
+                    fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: appColors.textPrimary,
                   ),
                 ),
 
-                SizedBox(height: 8.h),
+                const SizedBox(height: 8),
 
-                // ── Password field ────────────────────────────────────────────
                 CustomTextFieldWidget(
                   controller: vm.passwordController,
                   hintText: '••••••••',
@@ -109,26 +94,19 @@ class _LoginContent extends StatelessWidget {
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
                       color: appColors.textHint,
-                      size: 20.sp,
                     ),
                   ),
                 ),
 
-                // ── Forgot password ───────────────────────────────────────────
+                // نسيت كلمة المرور
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 8.h,
-                        horizontal: 0,
-                      ),
-                    ),
-                    child: Text(
+                    child:  Text(
                       'Forgot Password?',
-                      style: GoogleFonts.inter(
-                        fontSize: 13.sp,
+                      style: TextStyle(
+                        fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: appColors.textPrimary,
                       ),
@@ -136,39 +114,37 @@ class _LoginContent extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 8.h),
+                const SizedBox(height: 8),
 
-                // ── Login button ──────────────────────────────────────────────
+                // زر تسجيل الدخول
                 CustomButtonWidget(
                   text: 'Login',
                   isLoading: vm.isLoading,
-                  onPressed: () =>
-                      vm.login(context),
+                  onPressed: () => vm.login(context),
                 ),
 
-                SizedBox(height: 24.h),
+                const SizedBox(height: 24),
 
-                // ── Sign up link ──────────────────────────────────────────────
+                // رابط إنشاء حساب
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                     Text(
                       "Don't have an account? ",
-                      style: GoogleFonts.inter(
-                        fontSize: 14.sp,
+                      style: TextStyle(
+                        fontSize: 14,
                         color: appColors.textSecondary,
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const SignUpPageView(),
-                        ),
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        namePages.signUp,
                       ),
-                      child: Text(
+                      child:  Text(
                         'Sign Up',
-                        style: GoogleFonts.inter(
-                          fontSize: 14.sp,
+                        style: TextStyle(
+                          fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: appColors.textPrimary,
                         ),
@@ -177,7 +153,8 @@ class _LoginContent extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 32.h),
+                const SizedBox(height: 32),
+
               ],
             ),
           ),

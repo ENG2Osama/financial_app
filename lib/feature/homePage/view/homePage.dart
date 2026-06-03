@@ -127,7 +127,7 @@ shape: RoundedRectangleBorder(
 mainAxisSpacing: 10
                 ,crossAxisSpacing: 10,
                   crossAxisCount: 2,
-                mainAxisExtent: 125.h
+                mainAxisExtent: 170
 
               ),
                 children: [

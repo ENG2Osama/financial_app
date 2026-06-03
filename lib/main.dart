@@ -16,14 +16,14 @@ void main() {
         minTextAdapt: true,
         splitScreenMode: true,
 
-        child: homePage(),
+        child: mainPage(),
       ),
     ),
   );
 }
 
-class homePage extends StatelessWidget {
-   homePage({super.key});
+class mainPage extends StatelessWidget {
+   mainPage({super.key});
  late  SharedPreferences sharedPreferences ;
    bool isLogin=false;
 Future<void> intilSharePreferences() async {
@@ -36,7 +36,7 @@ Future<void> intilSharePreferences() async {
     intilSharePreferences();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute:isLogin ? namePages.homePage: namePages.onboarding,
+      initialRoute: namePages.onboarding,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

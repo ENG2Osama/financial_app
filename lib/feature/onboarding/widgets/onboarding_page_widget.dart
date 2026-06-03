@@ -1,7 +1,5 @@
-import 'package:financial_app/core/constants/appColors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../../../core/constants/appColors.dart';
 import '../model/onboarding_model.dart';
 
 class OnboardingPageWidget extends StatelessWidget {
@@ -13,44 +11,47 @@ class OnboardingPageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // الصورة — خلفية سوداء تتطابق مع خلفية الـ PNG
+        // الصورة — 58% من الارتفاع
         Expanded(
           flex: 58,
           child: Container(
             width: double.infinity,
-            color: Color.fromARGB(255, 255, 255, 255),
-            child: Image.asset(page.image, fit: BoxFit.contain),
+            color: appColors.bgWhite,
+            padding: const EdgeInsets.all(24),
+            child: Image.asset(
+              page.image,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
 
-        // النص — خلفية فاتحة
+        // النص — 42% من الارتفاع
         Expanded(
           flex: 42,
           child: Container(
             width: double.infinity,
-            color: const Color(0xFFF8F9FA),
-            padding: EdgeInsets.symmetric(horizontal: 28.w),
+            color: appColors.bgLight,
+            padding: const EdgeInsets.symmetric(horizontal: 28),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 32.h),
+                const SizedBox(height: 32),
                 Text(
                   page.title,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontSize: 28.sp,
+                  style:  TextStyle(
+                    fontSize: 26,
                     fontWeight: FontWeight.w800,
                     color: appColors.textPrimary,
                     height: 1.25,
-                    letterSpacing: -0.3,
                   ),
                 ),
-                SizedBox(height: 14.h),
+                const SizedBox(height: 14),
                 Text(
                   page.description,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontSize: 16.sp,
+                  style:  TextStyle(
+                    fontSize: 15,
                     fontWeight: FontWeight.w400,
                     color: appColors.textSecondary,
                     height: 1.6,

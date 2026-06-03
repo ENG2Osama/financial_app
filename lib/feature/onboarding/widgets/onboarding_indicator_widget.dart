@@ -1,6 +1,5 @@
-import 'package:financial_app/core/constants/appColors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/constants/appColors.dart';
 
 class OnboardingIndicatorWidget extends StatelessWidget {
   final int itemCount;
@@ -20,13 +19,12 @@ class OnboardingIndicatorWidget extends StatelessWidget {
         final bool isActive = index == currentIndex;
         return AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-          margin: EdgeInsets.symmetric(horizontal: 4.w),
-          height: 8.h,
-          width: isActive ? 28.w : 8.w,
+          margin: const EdgeInsets.symmetric(horizontal: 4),
+          height: 8,
+          width: isActive ? 28 : 8,
           decoration: BoxDecoration(
             color: isActive ? appColors.dotActive : appColors.dotInactive,
-            borderRadius: BorderRadius.circular(4.r),
+            borderRadius: BorderRadius.circular(4),
           ),
         );
       }),

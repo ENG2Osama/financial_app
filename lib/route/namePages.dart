@@ -4,4 +4,5 @@ class namePages {
   static const String signUp = '/sign-up';
   static final String homePage = '/';
   static final String notificationPage = 'notification';
+  static final String profileView = 'profileView';
 }
