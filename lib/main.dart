@@ -5,6 +5,7 @@ import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(
@@ -22,13 +23,20 @@ void main() {
 }
 
 class homePage extends StatelessWidget {
-  const homePage({super.key});
+   homePage({super.key});
+ late  SharedPreferences sharedPreferences ;
+   bool isLogin=false;
+Future<void> intilSharePreferences() async {
+  sharedPreferences = await SharedPreferences.getInstance();
+  bool isLogin=bool.parse( sharedPreferences.get('isLogin').toString() ) ?? false;
 
+}
   @override
   Widget build(BuildContext context) {
+    intilSharePreferences();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.onboarding,
+      initialRoute:isLogin ? namePages.homePage: namePages.onboarding,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

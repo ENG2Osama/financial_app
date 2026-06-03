@@ -26,7 +26,8 @@ class UserModel {
   "password": "pAword_L1am"
   },
   {
-  "name": "Olivia Jones",
+    "firstName": "Olivia",
+    "lastName": "Jones",
   "email": "olivia.j.88@gmail.com",
   "balance": 3200.00,
   "password": "Liv_Secure_2026"

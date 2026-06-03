@@ -2,14 +2,26 @@ import 'dart:math';
 
 import 'package:financial_app/feature/auth/model/userModel.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class userViewModel extends ChangeNotifier{
 
 
 UserModel? _userModel;
 
+void allUser(UserModel newUser){
 
-  bool foundUser(String emailUser,String paswordUser){
+
+  UserModel.localUsers.add( {
+    "firstName": newUser.firstName,
+    "lastName":newUser.lastName,
+    "email":newUser.email,
+    "password":newUser.password,
+    "balance":newUser.Balance
+  });
+}
+
+  Future<bool> foundUser(String emailUser,String paswordUser) async {
   bool isFound=false;
   for (var element in UserModel.localUsers) {
     if (emailUser == element["email"] &&
@@ -20,11 +32,13 @@ UserModel? _userModel;
         lastName: element["lastName"],
         email: element["email"],
         password: element["password"],
-        Balance: double.parse(element["balance"].toString()),
+        Balance: element["balance"],
       );
-      print("foundUser VM: ${hashCode}");
-print("user vm ${this.hashCode}");
+
+
       notifyListeners();
+      SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
+      sharedPreferences.setBool("isLogin", true);
       return true;
     }
   }

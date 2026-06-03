@@ -78,10 +78,7 @@ shape: RoundedRectangleBorder(
                       Selector<userViewModel,double>(builder: (context, value, child) =>
                           Text('\$$value',style:Theme.of(context).textTheme.bodyLarge)
                         , selector:(context, value){
-                            print("home vm ${value.hashCode}");
-                    print(value.Balance);
-                            final vm = context.read<userViewModel>();
-                            print("Home VM: ${vm.hashCode}");
+
                         return value.Balance;
                       }
                       )

@@ -1,4 +1,7 @@
+import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../core/constants/appColors.dart';
 import '../model/userModel.dart';
 
 enum SignUpStatus { idle, loading, success, error }
@@ -80,26 +83,29 @@ class SignUpViewModel extends ChangeNotifier {
   Future<void> signUp(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
 
+
     _status = SignUpStatus.loading;
     _errorMessage = null;
     notifyListeners();
 
-    // Simulate network call — replace with real API
     await Future.delayed(const Duration(seconds: 2));
-
-    final user = UserModel(
-      firstName: firstNameController.text.trim(),
-      lastName: lastNameController.text.trim(),
-      email: emailController.text.trim(),
-      password: passwordController.text,Balance: 0.0
-    );
+    context.read<userViewModel>().allUser(UserModel(
+        firstName: firstNameController.text.trim(),
+        lastName: lastNameController.text.trim(),
+        email: emailController.text.trim(),
+        password: passwordController.text
+        ,Balance: 0.0
+    ));
+//osa@gmail.com
 
 
     _status = SignUpStatus.success;
     notifyListeners();
 
-    // Navigate to Login after success
-    // if (context.mounted) context.go(AppRoutes.login);
+   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created',style: Theme.of(context).textTheme.bodySmall!.copyWith(
+     color: appColors.succe
+   ),)));
+   Navigator.of(context).pop();
   }
 
   // ── Dispose ───────────────────────────────────────────────────────────────────

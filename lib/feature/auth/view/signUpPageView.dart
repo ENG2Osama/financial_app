@@ -185,7 +185,7 @@ class _SignUpContent extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.of(context).maybePop(),
+                      onTap: () => Navigator.of(context).pop(),
                       child: Text(
                         'Log In',
                         style: GoogleFonts.inter(

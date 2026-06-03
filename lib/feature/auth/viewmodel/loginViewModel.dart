@@ -1,3 +1,4 @@
+import 'package:financial_app/core/constants/appColors.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/route/appRoute.dart';
 import 'package:financial_app/route/namePages.dart';
@@ -48,8 +49,16 @@ class LoginViewModel extends ChangeNotifier {
   // ── Submit ────────────────────────────────────────────────────────────────────
   Future<void> login(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
-    bool isfound=context.read<userViewModel>().foundUser(emailController.text.trim(), passwordController.text.trim());
-if(isfound)return;
+    bool isfound=await context.read<userViewModel>().foundUser(emailController.text.trim(), passwordController.text.trim());
+if(!isfound) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Email or Password incorrect',style:Theme.of(context).textTheme.bodySmall!.
+      copyWith(color: appColors.error),)));
+  emailController.text="";
+  passwordController.text="";
+  return ;
+}
+
 
 
 
