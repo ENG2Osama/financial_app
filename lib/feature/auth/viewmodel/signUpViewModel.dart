@@ -89,7 +89,7 @@ class SignUpViewModel extends ChangeNotifier {
     notifyListeners();
 
     await Future.delayed(const Duration(seconds: 2));
-    context.read<userViewModel>().allUser(
+    context.read<userViewModel>().addUser(
         UserModel(
         firstName: firstNameController.text.trim(),
         lastName: lastNameController.text.trim(),

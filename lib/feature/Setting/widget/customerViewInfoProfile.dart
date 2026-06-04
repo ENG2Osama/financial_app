@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/constants/appColors.dart';
 
-class customerViewInfro extends StatelessWidget {
+class customerViewInfroProfile extends StatelessWidget {
   final String subTitel;
   final String Titel;
   final Icon IconsInfro;
-  const customerViewInfro({super.key,
+  const customerViewInfroProfile({super.key,
     required this.subTitel,
     required this.Titel,
     required this.IconsInfro});
@@ -37,7 +37,7 @@ class customerViewInfro extends StatelessWidget {
       ],
     ),),
     Divider(color: appColors.textHint,),
-    SizedBox(height: 20,)
+    SizedBox(height: 15,)
       ],
     );
   }

@@ -39,7 +39,10 @@ class homePage extends StatelessWidget {
           ),
         )],
         leading: IconButton(iconSize: 30,
-            onPressed: (){}, icon: Icon(Icons.format_list_bulleted)),
+            onPressed: (){
+          Navigator.of(context).pushNamed(namePages.settingView);
+
+            }, icon: Icon(Icons.format_list_bulleted)),
 
       ),
       body: SafeArea(

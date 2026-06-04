@@ -9,7 +9,7 @@ class userViewModel extends ChangeNotifier{
 
 UserModel? _userModel;
 
-void allUser(UserModel newUser){
+void addUser(UserModel newUser){
 
 
   UserModel.localUsers.add( {
@@ -17,7 +17,9 @@ void allUser(UserModel newUser){
     "lastName":newUser.lastName,
     "email":newUser.email,
     "password":newUser.password,
-    "balance":newUser.Balance
+    "balance":newUser.Balance,
+    "country":newUser.country,
+    "country":newUser.phone,
   });
 }
 
@@ -34,7 +36,7 @@ void allUser(UserModel newUser){
         password: element["password"],
         Balance: element["balance"],
           country: element["country"],
-        phone: element["phone"]
+        phone: element["country"]
       );
 
 

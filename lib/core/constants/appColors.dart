@@ -14,10 +14,12 @@ class appColors {
   static Color border = Color(0xffe5e5e5e);
   static Color succe = Color(0xff22c55e);
   static Color error = Colors.red;
+  static Color onError = Color(0xfffdd8d1);
+  static Color bgIconError = Color(0xfffdd8d4);
   static Color warning = Color(0xfff59e0b);
   static Color info = Color(0xff3b82f6);
   static Color inactiveIcon = Color(0xff9e9e9e);
-  static Color shadow = Color(0x1400000000);
+  static Color shadow = Colors.black12;
 
   static const Color bgWhite = Color(0xFFFFFFFF);
   static const Color bgLight = Color(0xFFF8F9FA);

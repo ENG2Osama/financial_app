@@ -1,3 +1,4 @@
+import 'package:financial_app/feature/Setting/view/settingView.dart';
 import 'package:financial_app/feature/auth/view/loginPageView.dart';
 import 'package:financial_app/feature/auth/view/signUpPageView.dart';
 import 'package:financial_app/feature/homePage/view/homePageView.dart';
@@ -18,5 +19,6 @@ class appRoute {
     namePages.signUp: (_) => SignUpPageView(),
     namePages.notificationPage: (_) => notification(),
     namePages.profileView: (_) => profileView(),
+    namePages.settingView: (_) => settingView(),
   };
 }

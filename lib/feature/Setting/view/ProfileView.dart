@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../widget/customerViewInfo.dart';
+import '../widget/customerViewInfoProfile.dart';
 
 class profileView extends StatelessWidget {
   const profileView({super.key});
@@ -23,12 +23,13 @@ class profileView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 20,),
             IconButton(onPressed: (){
               Navigator.of(context).pop();
 
             }, icon: Icon(Icons.arrow_back_rounded),iconSize: 30,),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             Container(
               width: double.infinity,
@@ -61,24 +62,24 @@ class profileView extends StatelessWidget {
               ),
             ),
 
-        SizedBox(height: 50,),
+        SizedBox(height: 40,),
         Consumer<userViewModel>(builder: (context, value, child)
-        =>  customerViewInfro(subTitel:"${value.firstName} ${value.lastName}" ,Titel: "Name",
+        =>  customerViewInfroProfile(subTitel:"${value.firstName} ${value.lastName}" ,Titel: "Name",
             IconsInfro: Icon(Icons.mode_edit_outline_outlined,color: appColors.textHint,)),)
 
             ,Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfro(Titel: "Phone",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "Phone",
                 subTitel: "${value}",IconsInfro: Icon(Icons.phone_enabled_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.phone,
             ),Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfro(Titel: "Email",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "Email",
                 subTitel: "${value}",IconsInfro: Icon(Icons.email_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.email,
             ),
             Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfro(Titel: "Country",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "Country",
                 subTitel: "${value}",IconsInfro: Icon(Icons.location_on_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.country,
@@ -86,14 +87,14 @@ class profileView extends StatelessWidget {
             ),
 
             Selector<userViewModel,double>(
-              builder: (context, value, child) => customerViewInfro(Titel: "Balance",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "Balance",
                 subTitel: "${value}",IconsInfro: Icon(Icons.account_balance,color: appColors.textHint,),
               ),
               selector: (context, value) => value.Balance,
 
             ),
 
-            SizedBox(height: 30,),
+            SizedBox(height: 20,),
             Center(
               child: 
               ElevatedButton(
