@@ -3,11 +3,18 @@ import 'dart:math';
 import 'package:financial_app/core/theme/appTheme.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/feature/Send_mony/view/choicePersonView.dart';
+import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/route/appRoute.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (contaxt) => Sendmoneyprovider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

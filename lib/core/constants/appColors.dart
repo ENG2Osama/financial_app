@@ -19,4 +19,5 @@ class appcolors {
   static Color inactiveIcon = Color(0xff9e9e9e);
   static Color shadow = Color(0x1400000000);
   static Color textFild = Color.fromARGB(249, 219, 219, 219);
+  static Color card = Color.fromARGB(255, 241, 241, 241);
 }

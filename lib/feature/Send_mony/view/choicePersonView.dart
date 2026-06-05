@@ -5,13 +5,15 @@ import 'package:financial_app/core/constants/appSizes.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/core/widgets/textFieldCustomer.dart';
+import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/feature/Send_mony/widgets/recentsCards.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Choicepersonview extends StatelessWidget {
-  const Choicepersonview({super.key});
-
+  Choicepersonview({super.key});
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +33,12 @@ class Choicepersonview extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
-          Textfieldcustomer(text: "Name, Account Number, @cachtag"),
+          Textfieldcustomer(
+            text: "Name, Account Number, @cachtag",
+            isNumberKeyboard: false,
+            isSearch: true,
+            controller: nameController,
+          ),
           SizedBox(height: 30),
           Container(
             padding: EdgeInsets.symmetric(horizontal: Appsizes.padding),
@@ -88,14 +95,26 @@ class Choicepersonview extends StatelessWidget {
             ),
           ),
 
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: buttomprimary(
-              txt: "Continue",
-              fun: () {
-                Navigator.pushNamed(context, Namepages.Determinetheamountview);
-              },
-            ),
+          Consumer<Sendmoneyprovider>(
+            builder: (contaxt, provider, child) {
+              return Container(
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: buttomprimary(
+                  txt: "Continue",
+                  fun: () {
+                    if (nameController.text != "") {
+                      provider.choicPerson(nameController.text);
+
+                      print(Sendmoneyprovider.sendModel.reciverName);
+                      Navigator.pushNamed(
+                        context,
+                        Namepages.determinetheamountview,
+                      );
+                    }
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

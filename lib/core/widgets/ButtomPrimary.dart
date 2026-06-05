@@ -16,8 +16,8 @@ class buttomprimary extends StatelessWidget {
         //    foregroundColor: Colors.black,
       ),
       onPressed: fun,
-      child: Text('$txt'),
+      child: Text(txt),
     );
-    ;
+    
   }
 }
