@@ -6,4 +6,5 @@ class namePages {
   static final String notificationPage = 'notification';
   static final String profileView = 'profileView';
   static final String settingView = 'settingView';
+  static final String lankBank = 'lankBank';
 }

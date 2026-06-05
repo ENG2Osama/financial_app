@@ -1,5 +1,6 @@
 import 'package:financial_app/core/constants/appColors.dart';
 import 'package:financial_app/core/constants/appSizes.dart';
+import 'package:financial_app/feature/Setting/widget/customerCardViewBankLinked.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,6 +16,12 @@ class profileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.of(context).pop();
+
+        }, icon: Icon(Icons.arrow_back_rounded),iconSize: 30,) ,
+      ),
 
         body:
       Container(padding: EdgeInsets.all(appSizes.padding),
@@ -23,14 +30,7 @@ class profileView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20,),
-            IconButton(onPressed: (){
-              Navigator.of(context).pop();
 
-            }, icon: Icon(Icons.arrow_back_rounded),iconSize: 30,),
-            SizedBox(
-              height: 20,
-            ),
             Container(
               width: double.infinity,
               child: Column(
@@ -64,22 +64,22 @@ class profileView extends StatelessWidget {
 
         SizedBox(height: 40,),
         Consumer<userViewModel>(builder: (context, value, child)
-        =>  customerViewInfroProfile(subTitel:"${value.firstName} ${value.lastName}" ,Titel: "Name",
+        =>  customerViewInfroProfile(subTitel:"${value.firstName} ${value.lastName}" ,Titel: "NAME",
             IconsInfro: Icon(Icons.mode_edit_outline_outlined,color: appColors.textHint,)),)
 
             ,Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfroProfile(Titel: "Phone",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "PHONE",
                 subTitel: "${value}",IconsInfro: Icon(Icons.phone_enabled_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.phone,
             ),Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfroProfile(Titel: "Email",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "EMAIL",
                 subTitel: "${value}",IconsInfro: Icon(Icons.email_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.email,
             ),
             Selector<userViewModel,String>(
-              builder: (context, value, child) => customerViewInfroProfile(Titel: "Country",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "COUNTRY",
                 subTitel: "${value}",IconsInfro: Icon(Icons.location_on_outlined,color: appColors.textHint,),
               ),
               selector: (context, value) => value.country,
@@ -87,14 +87,35 @@ class profileView extends StatelessWidget {
             ),
 
             Selector<userViewModel,double>(
-              builder: (context, value, child) => customerViewInfroProfile(Titel: "Balance",
+              builder: (context, value, child) => customerViewInfroProfile(Titel: "BALANCE",
                 subTitel: "${value}",IconsInfro: Icon(Icons.account_balance,color: appColors.textHint,),
               ),
               selector: (context, value) => value.Balance,
 
             ),
+            SizedBox(height: 15,),
 
-            SizedBox(height: 20,),
+        Text("LINKED BANKS",style: Theme.of(context).textTheme.bodySmall,),
+            SizedBox(height: 7,),
+          Selector<userViewModel,List<Map>>(builder: (context, value, child) =>value.length==0?
+              Text('There is NO',style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontSize: 15.sp
+              ),):
+              ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: value.length,
+            itemBuilder:(context, index)
+            =>customerCardViewBankLinked(title: "${value[index]["bankName"]}", subtitle: "${value[index]["bankNumber"]}")
+            ,
+
+          ), selector: (context,vlaue)=>vlaue.linkedBanksGet)
+
+,
+        Divider(color: appColors.textHint,)
+
+
+        ,    SizedBox(height: 20,),
             Center(
               child: 
               ElevatedButton(

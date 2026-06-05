@@ -36,7 +36,7 @@ Future<void> intilSharePreferences() async {
     intilSharePreferences();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.settingView,
+      initialRoute: namePages.homePage,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

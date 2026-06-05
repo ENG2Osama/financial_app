@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../feature/Setting/view/NotificationsView.dart';
 import '../feature/Setting/view/ProfileView.dart';
+import '../feature/homePage/view/lankBank.dart';
 
 
 class appRoute {
@@ -20,5 +21,6 @@ class appRoute {
     namePages.notificationPage: (_) => notification(),
     namePages.profileView: (_) => profileView(),
     namePages.settingView: (_) => settingView(),
+    namePages.lankBank: (_) => lankBank(),
   };
 }

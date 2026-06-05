@@ -19,12 +19,13 @@ void addUser(UserModel newUser){
     "password":newUser.password,
     "balance":newUser.Balance,
     "country":newUser.country,
-    "country":newUser.phone,
+    "phone":newUser.phone,
+    "linkedBanks":newUser.linkedBanks
+
   });
 }
 
   Future<bool> foundUser(String emailUser,String paswordUser) async {
-  bool isFound=false;
   for (var element in UserModel.localUsers) {
     if (emailUser == element["email"] &&
         paswordUser == element["password"]) {
@@ -36,7 +37,8 @@ void addUser(UserModel newUser){
         password: element["password"],
         Balance: element["balance"],
           country: element["country"],
-        phone: element["country"]
+        phone: element["phone"],
+        linkedBanks: element["linkedBanks"]
       );
 
 
@@ -57,6 +59,14 @@ get lastName=>_userModel?.lastName ?? " ";
 get phone=>_userModel?.phone ?? " ";
 get country=>_userModel?.country ?? " ";
 get email=>_userModel?.email ?? " ";
+get linkedBanksGet=>_userModel?.linkedBanks ?? [
+
+];
+set linkedBanksSet(Map<String,String> newLinkBak){
+  _userModel?.linkedBanks.add(newLinkBak);
+  notifyListeners();
+}
+
 
 
 

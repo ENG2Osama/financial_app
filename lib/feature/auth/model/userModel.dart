@@ -6,6 +6,7 @@ class UserModel {
   final String country;
   final String phone;
    double Balance=0.0;
+  List<Map<String,String>> linkedBanks;
 
    UserModel({
     required this.firstName,
@@ -15,6 +16,7 @@ class UserModel {
     required this.Balance,
     required this.country,
     required this.phone,
+    required this.linkedBanks,
   });
 
 
@@ -29,7 +31,11 @@ class UserModel {
       "phone": "+999701234001",
       "country": "Noor Republic",
       "balance": 1500.50,
-      "password": "Ahmed_1023"
+      "password": "Ahmed_1023",
+      "linkedBanks": [
+        {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "123456789"},
+        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "987654321"}
+      ],
     },
     {
       "firstName": "Sara",
@@ -38,7 +44,11 @@ class UserModel {
       "phone": "+999701234002",
       "country": "Waha Kingdom",
       "balance": 3200.00,
-      "password": "Sara_2045"
+      "password": "Sara_2045",
+      "linkedBanks": [
+        {"bankName": "CAC Bank", "bankNumber": "234567891"},
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "876543219"}
+      ],
     },
     {
       "firstName": "Khaled",
@@ -47,7 +57,11 @@ class UserModel {
       "phone": "+999701234003",
       "country": "Rimal Union",
       "balance": 450.75,
-      "password": "Khaled_3187"
+      "password": "Khaled_3187",
+      "linkedBanks": [
+        {"bankName": "Saba Islamic Bank", "bankNumber": "345678912"},
+        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "765432198"}
+      ],
     },
     {
       "firstName": "Fatima",
@@ -56,7 +70,11 @@ class UserModel {
       "phone": "+999701234004",
       "country": "Ofoq Republic",
       "balance": 9800.20,
-      "password": "Fatima_4261"
+      "password": "Fatima_4261",
+      "linkedBanks": [
+        {"bankName": "National Bank of Yemen", "bankNumber": "456789123"},
+        {"bankName": "Yemen Kuwait Bank", "bankNumber": "654321987"}
+      ],
     },
     {
       "firstName": "Yousef",
@@ -65,7 +83,11 @@ class UserModel {
       "phone": "+999701234005",
       "country": "Zumorod State",
       "balance": 120.00,
-      "password": "Yousef_5374"
+      "password": "Yousef_5374",
+      "linkedBanks": [
+        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "567891234"},
+        {"bankName": "QNB Yemen", "bankNumber": "543219876"}
+      ],
     },
     {
       "firstName": "Reem",
@@ -74,7 +96,11 @@ class UserModel {
       "phone": "+999701234006",
       "country": "Sahab Kingdom",
       "balance": 5600.40,
-      "password": "Reem_6482"
+      "password": "Reem_6482",
+      "linkedBanks": [
+        {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "678912345"},
+        {"bankName": "CAC Bank", "bankNumber": "432198765"}
+      ],
     },
     {
       "firstName": "Mazen",
@@ -83,7 +109,11 @@ class UserModel {
       "phone": "+999701234007",
       "country": "Nogoom Union",
       "balance": 230.15,
-      "password": "Mazen_7529"
+      "password": "Mazen_7529",
+      "linkedBanks": [
+        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "789123456"},
+        {"bankName": "Saba Islamic Bank", "bankNumber": "321987654"}
+      ],
     },
     {
       "firstName": "Nora",
@@ -92,7 +122,11 @@ class UserModel {
       "phone": "+999701234008",
       "country": "Fajr Republic",
       "balance": 7400.00,
-      "password": "Nora_8641"
+      "password": "Nora_8641",
+      "linkedBanks": [
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "891234567"},
+        {"bankName": "National Bank of Yemen", "bankNumber": "219876543"}
+      ],
     },
     {
       "firstName": "Ali",
@@ -101,7 +135,11 @@ class UserModel {
       "phone": "+999701234009",
       "country": "Qimam State",
       "balance": 15.50,
-      "password": "Ali_9752"
+      "password": "Ali_9752",
+      "linkedBanks": [
+        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "912345678"},
+        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "198765432"}
+      ],
     },
     {
       "firstName": "Maha",
@@ -110,7 +148,11 @@ class UserModel {
       "phone": "+999701234010",
       "country": "Wadi Kingdom",
       "balance": 12500.90,
-      "password": "Maha_1086"
+      "password": "Maha_1086",
+      "linkedBanks": [
+        {"bankName": "Yemen Kuwait Bank", "bankNumber": "135792468"},
+        {"bankName": "QNB Yemen", "bankNumber": "864297531"}
+      ],
     },
     {
       "firstName": "Hassan",
@@ -119,7 +161,11 @@ class UserModel {
       "phone": "+999701234011",
       "country": "Bahr Union",
       "balance": 890.30,
-      "password": "Hassan_2194"
+      "password": "Hassan_2194",
+      "linkedBanks": [
+        {"bankName": "Saba Islamic Bank", "bankNumber": "357924681"},
+        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "642813579"}
+      ],
     },
     {
       "firstName": "Layan",
@@ -128,7 +174,11 @@ class UserModel {
       "phone": "+999701234012",
       "country": "Rawda Republic",
       "balance": 3100.00,
-      "password": "Layan_3307"
+      "password": "Layan_3307",
+      "linkedBanks": [
+        {"bankName": "National Bank of Yemen", "bankNumber": "468135792"},
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"}
+      ],
     },
     {
       "firstName": "Tariq",
@@ -137,7 +187,11 @@ class UserModel {
       "phone": "+999701234013",
       "country": "Amal State",
       "balance": 420.00,
-      "password": "Tariq_4418"
+      "password": "Tariq_4418",
+      "linkedBanks": [
+        {"bankName": "National Bank of Yemen", "bankNumber": "468135792"},
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"}
+      ],
     },
     {
       "firstName": "Hend",
@@ -146,7 +200,11 @@ class UserModel {
       "phone": "+999701234014",
       "country": "Shorouq Kingdom",
       "balance": 670.45,
-      "password": "Hend_5529"
+      "password": "Hend_5529",
+      "linkedBanks": [
+        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "579246813"},
+        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "428613795"}
+      ],
     },
     {
       "firstName": "Abdullah",
@@ -155,9 +213,15 @@ class UserModel {
       "phone": "+999701234015",
       "country": "Hilal Union",
       "balance": 2100.10,
-      "password": "Abdullah_6631"
+      "password": "Abdullah_6631",
+      "linkedBanks": [
+        {"bankName": "QNB Yemen", "bankNumber": "681357924"},
+        {"bankName": "Yemen Kuwait Bank", "bankNumber": "317924685"}
+      ],
     }
   ]
  ;
+
+
 
 }

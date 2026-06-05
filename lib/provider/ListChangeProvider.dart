@@ -7,6 +7,7 @@ import 'package:provider/single_child_widget.dart';
 import '../feature/auth/viewmodel/signUpViewModel.dart';
 import '../feature/auth/viewmodel/usesViewModel.dart';
 import '../feature/homePage/viewModel/homePageViewModel.dart';
+import '../feature/homePage/viewModel/lankBankViewModel.dart';
 
 class ListChangeProvider {
   static List<SingleChildWidget> ListProvider = [
@@ -17,5 +18,6 @@ class ListChangeProvider {
     ChangeNotifierProvider(create: (_) => userViewModel()),
     ChangeNotifierProvider(create: (_) => LoginViewModel()),
     ChangeNotifierProvider(create: (_) => SignUpViewModel()),
+    ChangeNotifierProvider(create: (_) => lankBankViewModel()),
   ];
 }

@@ -97,7 +97,9 @@ class SignUpViewModel extends ChangeNotifier {
         password: passwordController.text
         ,Balance: 0.0,
           phone: "There is NO",
-          country: "There is NO"
+          country: "There is NO",
+          linkedBanks: [
+          ]
     ));
 //osa@gmail.com
 

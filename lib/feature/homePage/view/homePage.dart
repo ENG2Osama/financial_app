@@ -103,7 +103,7 @@ shape: RoundedRectangleBorder(
                     Icon(Icons.arrow_upward_sharp,size: 20,),
 
                     Text(" Send Money",style: Theme.of(context).textTheme.bodyMedium!.
-                    copyWith(fontSize: 15),),
+                    copyWith(fontSize: 15),overflow: TextOverflow.ellipsis,),
                   ],
                 )),
                 ElevatedButton(
@@ -118,7 +118,8 @@ shape: RoundedRectangleBorder(
 
                     Text(" Receive Money",style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       fontSize: 14,
-                      color: appColors.onSecondary
+                      color: appColors.onSecondary,
+                      overflow: TextOverflow.ellipsis
                     ),),
                   ],
                 ))
@@ -136,18 +137,36 @@ mainAxisSpacing: 10
 
               ),
                 children: [
-                  customerCard(iconCard: Icon(Icons.history,color: appColors.secondary,),
+                  customerViewCardHomePage(
+                    iconCard: Icon(Icons.history,color: appColors.secondary,),
                     titleCard: 'Previous Activity',
-                    subtitleCard: "View History",)
-              ,customerCard(iconCard: Icon(Icons.account_balance,color: appColors.secondary,),
+                    subtitleCard: "View History",
+                    OnTap: () {
+
+                    }
+                  )
+              ,customerViewCardHomePage(iconCard: Icon(Icons.account_balance,color: appColors.secondary,),
                     titleCard: 'Link Bank',
-                    subtitleCard: "Connect accounts",)
-              ,    customerCard(iconCard: Icon(Icons.tune,color: appColors.secondary,),
+                    subtitleCard: "Connect accounts",
+                      OnTap: () {
+                Navigator.of(context).pushNamed(namePages.lankBank);
+
+                      })
+              ,    customerViewCardHomePage(iconCard: Icon(Icons.tune,color: appColors.secondary,),
                     titleCard: 'Spending Limits',
-                    subtitleCard: "Manage controls",),
-                  customerCard(iconCard: Icon(Icons.lock,color: appColors.secondary,),
+
+                    subtitleCard: "Manage controls",
+                      OnTap: () {
+
+                      }
+                  ),
+                  customerViewCardHomePage(iconCard: Icon(Icons.lock,color: appColors.secondary,),
                     titleCard: 'Security ',
-                    subtitleCard: "App protection",),
+                    subtitleCard: "App protection",
+                      OnTap: () {
+
+                      }
+                  ),
 
 
 
