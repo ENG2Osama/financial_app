@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:financial_app/feature/Send_mony/model/sendModel.dart';
 import 'package:financial_app/feature/Send_mony/model/sendMoneyRepo.dart';
 import 'package:flutter/material.dart';

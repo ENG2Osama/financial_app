@@ -1,5 +1,4 @@
 import 'package:financial_app/core/constants/appColors.dart';
-import 'package:financial_app/core/theme/light/colorSchemelight.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';

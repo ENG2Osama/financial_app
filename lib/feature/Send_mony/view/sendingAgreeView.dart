@@ -1,14 +1,9 @@
-import 'dart:math';
-
 import 'package:financial_app/core/constants/appColors.dart';
-import 'package:financial_app/core/theme/light/colorSchemelight.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
-import 'package:financial_app/feature/Send_mony/model/sendMoneyRepo.dart';
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
 class Sendingagreeview extends StatelessWidget {

@@ -26,7 +26,6 @@ class Determinetheamountview extends StatelessWidget {
         title: Text(
           "Send Money",
           style: Textthemelight.textTheme.bodyMedium,
-          // style: TextStyle(color: appcolors.primary),
         ),
         centerTitle: true,
         backgroundColor: appcolors.background,

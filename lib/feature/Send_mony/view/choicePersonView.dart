@@ -29,7 +29,6 @@ class Choicepersonview extends StatelessWidget {
         title: Text(
           "Send Money",
           style: Textthemelight.textTheme.bodyMedium,
-          // style: TextStyle(color: appcolors.primary),
         ),
         centerTitle: true,
         backgroundColor: appcolors.background,
@@ -79,21 +78,6 @@ class Choicepersonview extends StatelessWidget {
                 }
               },
             ),
-
-            // int i = 0;
-            // if (Sendmoneyrepo.sendingOperationList.length == 0) {
-            //   return SizedBox(
-            //     height: 300,
-            //     child: Center(
-            //       child: Text(
-            //         "No Sending Opration Recently",
-            //         style: Textthemelight.textTheme.bodyMedium,
-            //       ),
-            //     ),
-            //   );
-            // } else {
-
-            // },
           ),
 
           SizedBox(height: 30),
