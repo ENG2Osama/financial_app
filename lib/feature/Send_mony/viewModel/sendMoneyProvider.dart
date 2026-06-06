@@ -5,11 +5,21 @@ import 'package:financial_app/feature/Send_mony/model/sendMoneyRepo.dart';
 import 'package:flutter/material.dart';
 
 class Sendmoneyprovider with ChangeNotifier {
-  static SendModel sendModel = SendModel();
-  double balance = 100.00;
 
-  void choicPerson(String controllerText) {
-    sendModel.reciverName = controllerText;
+////////////////////////////////////
+///
+   double balance = 100.00;
+  //  this is variabl included in other feature
+///
+//////////////////////////////////////
+
+
+  static SendModel sendModel = SendModel();
+  
+
+  void choicPerson(SendModel sendModelmodel, String controllerText) {
+    sendModelmodel.reciverName = controllerText;
+    sendModel = sendModelmodel;
     notifyListeners();
   }
 
@@ -31,6 +41,9 @@ class Sendmoneyprovider with ChangeNotifier {
   void addSendingOperation(SendModel sendModel) {
     sendModel.id++;
     Sendmoneyrepo.sendingOperationList.add(sendModel);
+    length++;
     notifyListeners();
   }
+
+  int length = Sendmoneyrepo.sendingOperationList.length;
 }

@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 
 class Determinetheamountview extends StatelessWidget {
   TextEditingController numberController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+ double? amount ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +52,7 @@ class Determinetheamountview extends StatelessWidget {
             isNumberKeyboard: true,
             isSearch: false,
             controller: numberController,
+            formKey: formKey,
           ),
           SizedBox(height: 380),
           Consumer<Sendmoneyprovider>(
@@ -61,9 +64,10 @@ class Determinetheamountview extends StatelessWidget {
                   child: buttomprimary(
                     txt: "Send Now",
                     fun: () {
-                      if (numberController.text != null  ) {
+                      if (formKey.currentState!.validate()) {
                         double? temp = double.tryParse(numberController.text);
-                        if (temp != null || temp != 0 && provider.balance == temp!) {
+                        if (provider.balance >= temp!) {
+                          
                           provider.determAmount(temp);
 
                           TimeOfDay timeOfDay = System.TimeOfDay.now();
@@ -78,6 +82,14 @@ class Determinetheamountview extends StatelessWidget {
                           provider.sendDateFun(stringDate);
 
                           Navigator.pushNamed(context, Namepages.sendingAgree);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content:Text("Your Balance Not Enghuth", style: TextStyle(fontSize: Textthemelight.textTheme.bodySmall!.fontSize),) ,
+                            backgroundColor: appcolors.error,
+                            behavior: SnackBarBehavior.floating,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                            duration: Duration(seconds: 2),),
+                            );
                         }
                       }
                     },

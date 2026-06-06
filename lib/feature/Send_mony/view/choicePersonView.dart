@@ -5,6 +5,8 @@ import 'package:financial_app/core/constants/appSizes.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/core/widgets/textFieldCustomer.dart';
+import 'package:financial_app/feature/Send_mony/model/sendModel.dart';
+import 'package:financial_app/feature/Send_mony/model/sendMoneyRepo.dart';
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/feature/Send_mony/widgets/recentsCards.dart';
 import 'package:financial_app/route/namePages.dart';
@@ -12,8 +14,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Choicepersonview extends StatelessWidget {
+  
   Choicepersonview({super.key});
   TextEditingController nameController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  String? name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +43,7 @@ class Choicepersonview extends StatelessWidget {
             isNumberKeyboard: false,
             isSearch: true,
             controller: nameController,
+            formKey: formKey,
           ),
           SizedBox(height: 30),
           Container(
@@ -46,20 +52,48 @@ class Choicepersonview extends StatelessWidget {
           ),
           SizedBox(
             height: 300,
-            child: ListView(
-              children: [
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-                Recentscards(title: "Alex Rivera", suptitle: "@arivera"),
-              ],
+            child: Consumer<Sendmoneyprovider>(
+              builder: (context, pro, child) {
+                if (pro.length != 0) {
+                  return ListView.builder(
+                    itemCount: Sendmoneyrepo.sendingOperationList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Recentscards(
+                        title: Sendmoneyrepo
+                            .sendingOperationList[index]
+                            .reciverName,
+                        suptitle: "@arivera",
+                      );
+                    },
+                  );
+                } else {
+                  return SizedBox(
+                    height: 300,
+                    child: Center(
+                      child: Text(
+                        "No Sending Opration Recently",
+                        style: Textthemelight.textTheme.bodyMedium,
+                      ),
+                    ),
+                  );
+                }
+              },
             ),
+
+            // int i = 0;
+            // if (Sendmoneyrepo.sendingOperationList.length == 0) {
+            //   return SizedBox(
+            //     height: 300,
+            //     child: Center(
+            //       child: Text(
+            //         "No Sending Opration Recently",
+            //         style: Textthemelight.textTheme.bodyMedium,
+            //       ),
+            //     ),
+            //   );
+            // } else {
+
+            // },
           ),
 
           SizedBox(height: 30),
@@ -102,8 +136,9 @@ class Choicepersonview extends StatelessWidget {
                 child: buttomprimary(
                   txt: "Continue",
                   fun: () {
-                    if (nameController.text != "") {
-                      provider.choicPerson(nameController.text);
+                    if (formKey.currentState!.validate()) {
+                      SendModel sendModel = SendModel();
+                      provider.choicPerson(sendModel, nameController.text);
 
                       print(Sendmoneyprovider.sendModel.reciverName);
                       Navigator.pushNamed(
