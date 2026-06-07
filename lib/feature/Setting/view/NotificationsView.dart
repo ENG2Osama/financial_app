@@ -1,6 +1,8 @@
 import 'package:financial_app/core/constants/appSizes.dart';
+import 'package:financial_app/feature/Setting/viewModel/notificationViewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/appColors.dart';
 import '../widget/customerCardNotifications.dart';
@@ -24,8 +26,15 @@ class notification extends StatelessWidget {
       ),backgroundColor: appColors.bgCard,
       body: Container(
         padding: EdgeInsets.all(appSizes.padding),
-        child: customerCardNotifications(title: "Payment received",
-          minAgo: "2",subTitle: "\$450 from Alex",),),
+        child: Selector<notificationViewModel,List<Map>>(
+          builder: (context, value, child) =>value.length==0?Center(child: Text("There is NO"),): ListView.builder(itemBuilder:(context, index) =>
+          customerCardNotifications(title: "${value[index]["title"]}",
+            time: value[index]["time"],subTitle: "${value[index]["subtitle"]}",),
+              itemCount: value.length,
+          ) ,
+          selector: (BuildContext context, notificationViewModel value) =>value.notification,),
+           )
+
       
 
     )

@@ -79,7 +79,6 @@ class SignUpViewModel extends ChangeNotifier {
     return null;
   }
 
-  // ── Submit ────────────────────────────────────────────────────────────────────
   Future<void> signUp(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
 
@@ -108,12 +107,19 @@ class SignUpViewModel extends ChangeNotifier {
     notifyListeners();
 
    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created',style: Theme.of(context).textTheme.bodySmall!.copyWith(
-     color: appColors.succe
+     color: appColors.success
    ),)));
+   cleanTextEditingControler();
    Navigator.of(context).pop();
   }
+  void cleanTextEditingControler(){
+    firstNameController.text="";
+    lastNameController.text="";
+    emailController.text="";
+    passwordController.text="";
+    confirmPasswordController.text="";
+  }
 
-  // ── Dispose ───────────────────────────────────────────────────────────────────
   @override
   void dispose() {
     firstNameController.dispose();

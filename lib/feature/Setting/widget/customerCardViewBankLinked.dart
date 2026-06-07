@@ -40,7 +40,7 @@ class customerCardViewBankLinked extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 16
               ),),
-              Text('Account Number:${subtitle.substring(0,3)}****${subtitle.substring(6)}',style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              Text('Account Number:${subtitle.substring(0,2)}****${subtitle.substring(6)}',style: Theme.of(context).textTheme.bodySmall!.copyWith(
                   fontSize: 13
 
               ),),

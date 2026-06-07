@@ -1,4 +1,4 @@
-import 'package:financial_app/feature/auth/widgets/customTextFieldWidget.dart';
+import 'package:financial_app/core/widgets/customTextFieldWidget.dart';
 import 'package:financial_app/feature/homePage/viewModel/lankBankViewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/constants/appColors.dart';
 import '../viewmodel/loginViewModel.dart';
-import '../widgets/customTextFieldWidget.dart';
+import '../../../core/widgets/customTextFieldWidget.dart';
 import '../widgets/customButtonWidget.dart';
 
 class LoginPageView extends StatelessWidget {
@@ -26,7 +26,6 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 56),
 
-                // العنوان
                  Text(
                   'Welcome Back',
                   style: TextStyle(
@@ -98,7 +97,6 @@ class LoginPageView extends StatelessWidget {
                   ),
                 ),
 
-                // نسيت كلمة المرور
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -116,7 +114,6 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 8),
 
-                // زر تسجيل الدخول
                 CustomButtonWidget(
                   text: 'Login',
                   isLoading: vm.isLoading,
@@ -125,7 +122,6 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 24),
 
-                // رابط إنشاء حساب
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -137,10 +133,14 @@ class LoginPageView extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(
+
+                      onTap: () {
+                        vm.cleanTextEditingControler();
+                        Navigator.pushNamed(
                         context,
                         namePages.signUp,
-                      ),
+                      );
+                        },
                       child:  Text(
                         'Sign Up',
                         style: TextStyle(

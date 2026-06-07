@@ -149,7 +149,15 @@ mainAxisSpacing: 10
                     titleCard: 'Link Bank',
                     subtitleCard: "Connect accounts",
                       OnTap: () {
-                Navigator.of(context).pushNamed(namePages.lankBank);
+                Navigator.of(context).pushNamed(namePages.lankBank).then((value){
+                  if(value == true)
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Link Bank Successful',style:
+                      Theme.of(context).textTheme.bodySmall!.copyWith(
+                          color: appColors.success
+                      ),)));
+
+                });
 
                       })
               ,    customerViewCardHomePage(iconCard: Icon(Icons.tune,color: appColors.secondary,),

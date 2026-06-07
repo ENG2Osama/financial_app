@@ -1,6 +1,8 @@
+import 'package:financial_app/feature/Setting/viewModel/notificationViewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/appColors.dart';
 import '../../../core/constants/appSizes.dart';
@@ -10,14 +12,18 @@ class customerCardNotifications extends StatelessWidget {
 
   final String subTitle;
 
-  final String minAgo;
+  final DateTime time;
+   String? timeAge;
+   customerCardNotifications({super.key,required this.title,
+    required this.subTitle,
+    required this.time});
 
-  const customerCardNotifications({super.key,required this.title,
-    required this.subTitle,required this.minAgo});
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+timeAge= context.read<notificationViewModel>().foundTimeAge(time);
+return Container(
 
       height: 100.h,
       width:      double.infinity,
@@ -29,12 +35,12 @@ shape: RoundedRectangleBorder(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            Container(margin: EdgeInsets.only(left: 0),
               decoration: BoxDecoration(
                   color: appColors.primary,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                bottomLeft:Radius.circular(15) ),
+                    topLeft: Radius.circular(5),
+                bottomLeft:Radius.circular(5) ),
               ),
 
               width: 4.w,
@@ -58,16 +64,16 @@ shape: RoundedRectangleBorder(
                     Text('$title'
                       ,style: Theme.of(context).
                       textTheme.bodySmall!.copyWith(
-                        fontSize: 16.sp
+                        fontSize: 16
                             ,
                         color: appColors.secondary
                           ,
                         fontWeight: FontWeight.bold
-                      ),),
+                      ),),SizedBox(height: 5,),
                     Text('$subTitle'
                       ,style: Theme.of(context).
                       textTheme.bodySmall!.copyWith(
-                            fontSize: 13.sp
+                            fontSize: 13
 
                         ),),
                   ],
@@ -76,14 +82,14 @@ shape: RoundedRectangleBorder(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text('$minAgo min ago'
+                      Text('${timeAge} ago'
                         ,style: Theme.of(context).
-                        textTheme.bodySmall!.copyWith(fontSize: 13.sp,
+                        textTheme.bodySmall!.copyWith(fontSize: 13,
                         fontWeight: FontWeight.w700),),
                       Container(
                         margin: EdgeInsets.only(top: 10),
-                        height: 8.h,
-                        width: 10.w,
+                        height: 12,
+                        width: 12,
                         decoration: BoxDecoration(
                           color: appColors.primary
                               ,borderRadius: BorderRadius.circular(10)

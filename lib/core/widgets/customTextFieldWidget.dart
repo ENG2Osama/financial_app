@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/appColors.dart';
+import '../constants/appColors.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -17,7 +17,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     required this.hintText,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.textInputAction = TextInputAction.next,
+    this.textInputAction = TextInputAction.continueAction,
     this.validator,
     this.suffixIcon,
   });

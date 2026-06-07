@@ -1,13 +1,14 @@
+import 'package:financial_app/feature/Setting/widget/customerBottomSheetHelp.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/constants/appColors.dart';
 import '../viewmodel/signUpViewModel.dart';
-import '../widgets/customTextFieldWidget.dart';
+import '../../../core/widgets/customTextFieldWidget.dart';
 import '../widgets/customButtonWidget.dart';
 
 class SignUpPageView extends StatelessWidget {
-  const SignUpPageView({super.key});
-
+   SignUpPageView({super.key});
+  customerBottomSheetHelp _customerBottomSheetHelp= customerBottomSheetHelp();
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<SignUpViewModel>();
@@ -35,12 +36,17 @@ class SignUpPageView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Center(
-              child: Text(
-                'Help',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: appColors.textPrimary,
+              child: InkWell(
+                onTap: (){
+                  _customerBottomSheetHelp.showBottomSheetHepl(context);
+                },
+                child: Text(
+                  'Help',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    color: appColors.textPrimary,
+                  ),
                 ),
               ),
             ),
@@ -156,7 +162,10 @@ class SignUpPageView extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.maybePop(context),
+                      onTap: () {
+vm.cleanTextEditingControler();
+                        Navigator.of(context).pop();
+                      },
                       child:  Text(
                         'Log In',
                         style: TextStyle(

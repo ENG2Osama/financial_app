@@ -37,7 +37,8 @@ class OnboardingViewModel extends ChangeNotifier {
         curve: Curves.easeInOut,
       );
     } else {
-      _completeOnboarding(); // حفظ الحالة قبل الانتقال
+      _completeOnboarding();
+
       Navigator.pushReplacementNamed(context, namePages.login);
     }
   }
@@ -52,17 +53,15 @@ class OnboardingViewModel extends ChangeNotifier {
   }
 
   void skip(BuildContext context) {
-    _completeOnboarding(); // حفظ الحالة عند التخطي
+    _completeOnboarding();
     Navigator.pushReplacementNamed(context, namePages.login);
   }
 
-  // ── الدالة الجديدة: حفظ أن المستخدم أكمل الـ onboarding ──
   Future<void> _completeOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_onboardingKey, true);
   }
 
-  // ── الدالة الثابتة التي يناديها الاختبار ──
   static Future<bool> hasSeenOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_onboardingKey) ?? false;

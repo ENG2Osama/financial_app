@@ -8,21 +8,16 @@ class mothedContactUs {
       query: 'subject=Welcome&body=I would like to inquire',
     );
 
-    if (await canLaunchUrl(email)) {
+
       await launchUrl(email);
-    } else {
-      print('Cannot open email app');
-    }
+
   }Future<void> ContectPhone() async {
     final Uri phone = Uri.parse(
       'tel:+967778972159',
     );
 
-    if (await canLaunchUrl(phone)) {
       await launchUrl(phone);
-    } else {
-      print('Cannot open phone app');
-    }
+
   }
   Future<void> ContectWhatsapp() async {
     final Uri Whatsapp=Uri.parse(

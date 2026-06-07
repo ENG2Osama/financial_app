@@ -11,7 +11,6 @@ class OnboardingPageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // الصورة — 58% من الارتفاع
         Expanded(
           flex: 58,
           child: Container(
@@ -25,7 +24,6 @@ class OnboardingPageWidget extends StatelessWidget {
           ),
         ),
 
-        // النص — 42% من الارتفاع
         Expanded(
           flex: 42,
           child: Container(

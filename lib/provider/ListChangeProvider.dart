@@ -4,6 +4,7 @@ import 'package:financial_app/feature/onboarding/viewmodel/onboarding_viewmodel.
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../feature/Setting/viewModel/notificationViewModel.dart';
 import '../feature/auth/viewmodel/signUpViewModel.dart';
 import '../feature/auth/viewmodel/usesViewModel.dart';
 import '../feature/homePage/viewModel/homePageViewModel.dart';
@@ -19,5 +20,6 @@ class ListChangeProvider {
     ChangeNotifierProvider(create: (_) => LoginViewModel()),
     ChangeNotifierProvider(create: (_) => SignUpViewModel()),
     ChangeNotifierProvider(create: (_) => lankBankViewModel()),
+    ChangeNotifierProvider(create: (_) => notificationViewModel()),
   ];
 }

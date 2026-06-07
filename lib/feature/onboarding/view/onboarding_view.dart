@@ -20,14 +20,12 @@ class OnboardingView extends StatelessWidget {
         child: Column(
           children: [
 
-            // ── الشريط العلوي ─────────────────────────────────────────────
             Container(
               color: appColors.bgWhite,
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // زر الرجوع
                   AnimatedOpacity(
                     duration: const Duration(milliseconds: 200),
                     opacity: vm.isFirstPage ? 0.0 : 1.0,
@@ -38,7 +36,6 @@ class OnboardingView extends StatelessWidget {
                     ),
                   ),
 
-                  // زر Skip
                   AnimatedOpacity(
                     duration: const Duration(milliseconds: 200),
                     opacity: vm.isLastPage ? 0.0 : 1.0,
@@ -58,7 +55,6 @@ class OnboardingView extends StatelessWidget {
               ),
             ),
 
-            // ── الصفحات ───────────────────────────────────────────────────
             Expanded(
               child: Column(
                 children: [
@@ -72,7 +68,6 @@ class OnboardingView extends StatelessWidget {
                     ),
                   ),
 
-                  // ── النقاط والزر ─────────────────────────────────────────
                   Container(
                     color: appColors.bgLight,
                     padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),

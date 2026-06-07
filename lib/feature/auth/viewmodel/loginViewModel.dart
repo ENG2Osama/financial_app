@@ -26,13 +26,11 @@ class LoginViewModel extends ChangeNotifier {
   String? get errorMessage => _errorMessage;
   bool get isLoading => _status == LoginStatus.loading;
 
-  // ── Toggle visibility ─────────────────────────────────────────────────────────
   void togglePasswordVisibility() {
     _obscurePassword = !_obscurePassword;
     notifyListeners();
   }
 
-  // ── Validators ────────────────────────────────────────────────────────────────
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) return 'Email is required';
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
@@ -46,11 +44,18 @@ class LoginViewModel extends ChangeNotifier {
     return null;
   }
 
-  // ── Submit ────────────────────────────────────────────────────────────────────
+
   Future<void> login(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
     bool isfound=await context.read<userViewModel>().foundUser(emailController.text.trim(), passwordController.text.trim());
 if(!isfound) {
+  _status = LoginStatus.loading;
+  _errorMessage = null;
+  notifyListeners();
+
+  await Future.delayed(const Duration(seconds: 2));
+  _status = LoginStatus.success;
+  notifyListeners();
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('Email or Password incorrect',style:Theme.of(context).textTheme.bodySmall!.
       copyWith(color: appColors.error),)));
@@ -67,17 +72,25 @@ if(!isfound) {
     _errorMessage = null;
     notifyListeners();
 
-    // Simulate network call — replace with real API
     await Future.delayed(const Duration(seconds: 2));
 
 
     _status = LoginStatus.success;
     notifyListeners();
 
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Login Successful',style: 
+        Theme.of(context).textTheme.bodySmall!.copyWith(
+        color: appColors.success
+    ),)));
     Navigator.of(context).pushReplacementNamed(namePages.homePage);
   }
+  void cleanTextEditingControler(){
 
-  // ── Dispose ───────────────────────────────────────────────────────────────────
+    emailController.text="";
+    passwordController.text="";
+  }
+
   @override
   void dispose() {
     emailController.dispose();
