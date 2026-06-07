@@ -58,7 +58,7 @@ class Choicepersonview extends StatelessWidget {
             child: Text("RECENTS", style: Textthemelight.textTheme.bodySmall),
           ),
           SizedBox(
-            height: 300,
+            height:250 ,
             child: Consumer<Sendmoneyprovider>(
               builder: (context, pro, child) {
                 if (pro.length != 0) {

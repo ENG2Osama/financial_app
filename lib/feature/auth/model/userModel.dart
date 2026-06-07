@@ -25,6 +25,19 @@ class UserModel {
 
   static List<Map> localUsers=[
     {
+      "firstName": "Abdullah",
+      "lastName": "Twafeq",
+      "email": "Obad@gmail.com",
+      "phone": "+967736621891",
+      "country": "Yemen Republic",
+      "balance": 15000000,
+      "password": "Ahmed_1023",
+      "linkedBanks": [
+        {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "123456789"},
+        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "987654321"}
+      ],
+    },
+    {
       "firstName": "Ahmed",
       "lastName": "AlAriqi",
       "email": "ahmed1023@gmail.com",

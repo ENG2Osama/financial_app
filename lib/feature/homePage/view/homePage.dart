@@ -162,7 +162,9 @@ class homePage extends StatelessWidget {
                       iconCard: Icon(Icons.history, color: appColors.secondary),
                       titleCard: 'Previous Activity',
                       subtitleCard: "View History",
-                      OnTap: () {},
+                      OnTap: () {
+                        Navigator.of(context).pushNamed(namePages.activity);
+                      },
                     ),
                     customerViewCardHomePage(
                       iconCard: Icon(
@@ -175,7 +177,7 @@ class homePage extends StatelessWidget {
                         Navigator.of(
                           context,
                         ).pushNamed(namePages.lankBank).then((value) {
-                          if (value == true)
+                          if (value == true) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -185,6 +187,7 @@ class homePage extends StatelessWidget {
                                 ),
                               ),
                             );
+                          }
                         });
                       },
                     ),

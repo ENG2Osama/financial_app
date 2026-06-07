@@ -1,6 +1,7 @@
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
+
+import 'package:financial_app/feature/activities/viewmodel/activityViewModel.dart';
 import 'package:financial_app/feature/auth/viewmodel/loginViewModel.dart';
-import 'package:financial_app/feature/homePage/model/homePageModel.dart';
 import 'package:financial_app/feature/onboarding/viewmodel/onboarding_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -23,5 +24,6 @@ class ListChangeProvider {
     ChangeNotifierProvider(create: (context) => lankBankViewModel()),
     ChangeNotifierProvider(create: (context) => notificationViewModel()),
     ChangeNotifierProvider(create: (context) => Sendmoneyprovider()),
+    ChangeNotifierProvider(create: (context) => activityViewModel()),
   ];
 }

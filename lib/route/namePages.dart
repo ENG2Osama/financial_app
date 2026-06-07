@@ -11,4 +11,5 @@ class namePages {
   static String determinetheamountview = "Determinetheamountview";
   static String sendingAgree = "sendingAgree";
   static String sendingcomplateview = "sendingcomplateview";
+  static const String activity = '/activity';
 }

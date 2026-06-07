@@ -1,4 +1,6 @@
 import 'package:financial_app/feature/Setting/view/settingView.dart';
+import 'package:financial_app/feature/activities/view/activityScreen.dart';
+
 import 'package:financial_app/feature/auth/view/loginPageView.dart';
 import 'package:financial_app/feature/auth/view/signUpPageView.dart';
 import 'package:financial_app/feature/homePage/view/homePageView.dart';
@@ -32,5 +34,6 @@ class appRoute {
     namePages.determinetheamountview: (context) => Determinetheamountview(),
     namePages.sendingAgree: (context) => Sendingagreeview(),
     namePages.sendingcomplateview: (context) => Sendingcomplateview(),
+    namePages.activity: (_) => const activityScreen(),
   };
 }

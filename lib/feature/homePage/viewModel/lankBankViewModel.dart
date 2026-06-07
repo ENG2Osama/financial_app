@@ -1,6 +1,7 @@
 import 'package:financial_app/feature/Setting/model/notificationModel.dart';
 import 'package:financial_app/feature/Setting/viewModel/notificationViewModel.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
+import 'package:financial_app/feature/activities/viewmodel/activityViewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -36,6 +37,11 @@ String? validateaccountNumber(String? value){
     };
     context.read<notificationViewModel>().addNotification(title: "Bank linking process",
         subtitle: "It was linked with a ${bankName.text.trim()}", timeProsses: DateTime.now());
+
+    // Record activity
+    try {
+      context.read<activityViewModel>().recordLinkBank(bankName: bankName.text.trim());
+    } catch (_) {}
 
     Navigator.of(context).pop(true);
 
