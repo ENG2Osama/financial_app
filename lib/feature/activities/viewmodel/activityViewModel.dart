@@ -87,10 +87,7 @@ class activityViewModel extends ChangeNotifier {
     addActivity(title: title, subtitle: subtitle, type: ActivityType.received);
   }
 
-  void recordSendMoney({
-    required double amount,
-    required String to,
-  }) {
+  void recordSendMoney({required double amount, required String to}) {
     addActivity(
       title: 'Sent \$${amount.toStringAsFixed(2)}',
       subtitle: 'Sent to $to',
@@ -98,9 +95,7 @@ class activityViewModel extends ChangeNotifier {
     );
   }
 
-  void recordLinkBank({
-    required String bankName,
-  }) {
+  void recordLinkBank({required String bankName}) {
     addActivity(
       title: 'Linked Bank',
       subtitle: 'Linked account: $bankName',
