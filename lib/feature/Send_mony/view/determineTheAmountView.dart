@@ -13,8 +13,10 @@ class Determinetheamountview extends StatelessWidget {
   TextEditingController numberController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   double? amount;
+
   @override
   Widget build(BuildContext context) {
+    context.read<Sendmoneyprovider>().loadBalance(context);
     return Scaffold(
       backgroundColor: appColors.background,
       appBar: AppBar(

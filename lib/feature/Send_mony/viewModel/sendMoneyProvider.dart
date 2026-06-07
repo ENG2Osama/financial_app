@@ -1,18 +1,22 @@
 import 'package:financial_app/feature/Send_mony/model/sendModel.dart';
 import 'package:financial_app/feature/Send_mony/model/sendMoneyRepo.dart';
+import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Sendmoneyprovider with ChangeNotifier {
-
-////////////////////////////////////
-///
-   double balance = 100.00;
+  ////////////////////////////////////
+  ///
+  double balance = 0.0;
   //  this is variabl included in other feature
-///
-//////////////////////////////////////
-
+  ///
+  //////////////////////////////////////
 
   static SendModel sendModel = SendModel();
+  void loadBalance(BuildContext context) {
+    balance = context.read<userViewModel>().BalanceGet;
+  }
+
   
 
   void choicPerson(SendModel sendModelmodel, String controllerText) {
@@ -42,7 +46,6 @@ class Sendmoneyprovider with ChangeNotifier {
     length++;
     notifyListeners();
   }
-  
 
   int length = Sendmoneyrepo.sendingOperationList.length;
 }

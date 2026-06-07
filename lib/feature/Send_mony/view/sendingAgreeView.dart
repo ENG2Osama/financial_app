@@ -4,6 +4,7 @@ import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/feature/Setting/viewModel/notificationViewModel.dart';
+import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -175,6 +176,9 @@ class Sendingagreeview extends StatelessWidget {
                       child: buttomprimary(
                         txt: "Confirm",
                         fun: () {
+                          context.read<userViewModel>().BakanceSet =
+                              (context.read<userViewModel>().BalanceGet) -
+                              (Sendmoneyprovider.sendModel.sendingAmount);
                           context.read<notificationViewModel>().addNotification(
                             title: "Payment received",
                             subtitle:

@@ -95,7 +95,7 @@ class homePage extends StatelessWidget {
                           style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         selector: (context, value) {
-                          return value.Balance;
+                          return value.BalanceGet;
                         },
                       ),
                     ],
