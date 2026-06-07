@@ -19,7 +19,9 @@ class appColors {
   static Color warning = Color(0xfff59e0b);
   static Color info = Color(0xff3b82f6);
   static Color inactiveIcon = Color(0xff9e9e9e);
-  static Color shadow = Colors.black12;
+  static Color shadow = Color(0x1400000000);
+  static Color textFild = Color.fromARGB(249, 219, 219, 219);
+  static Color card = Color.fromARGB(255, 241, 241, 241);
 
   static const Color bgWhite = Color(0xFFFFFFFF);
   static const Color bgLight = Color(0xFFF8F9FA);

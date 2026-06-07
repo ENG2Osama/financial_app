@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class appTheme {
   static ThemeData lightTheme = ThemeData(
-    textTheme: textthemelight.textTheme,
+    textTheme: Textthemelight.textTheme,
     colorScheme: colorschemelight.colorScheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -24,9 +24,9 @@ class appTheme {
     scaffoldBackgroundColor: appColors.background,
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      elevation: 0,shadowColor:appColors.shadow,
+      elevation: 0,
+      shadowColor: appColors.shadow,
       backgroundColor: appColors.bgLight,
-
-    )
+    ),
   );
 }

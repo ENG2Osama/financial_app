@@ -12,11 +12,12 @@ class buttomprimary extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         textStyle: Theme.of(context).textTheme.bodyMedium,
-        minimumSize: Size(340, 56),
+        minimumSize: Size(300, 56),
         //    foregroundColor: Colors.black,
       ),
       onPressed: fun,
       child: Text(txt),
     );
+    ;
   }
 }

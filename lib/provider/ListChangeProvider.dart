@@ -1,3 +1,4 @@
+import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
 import 'package:financial_app/feature/auth/viewmodel/loginViewModel.dart';
 import 'package:financial_app/feature/homePage/model/homePageModel.dart';
 import 'package:financial_app/feature/onboarding/viewmodel/onboarding_viewmodel.dart';
@@ -14,12 +15,13 @@ class ListChangeProvider {
   static List<SingleChildWidget> ListProvider = [
     //add ChangeNotifierProvider here
     ChangeNotifierProvider(create: (context) => homePageViewModel()),
-    ChangeNotifierProvider(create: (_) => OnboardingViewModel()),
-    ChangeNotifierProvider(create: (_) => LoginViewModel()),
-    ChangeNotifierProvider(create: (_) => userViewModel()),
-    ChangeNotifierProvider(create: (_) => LoginViewModel()),
-    ChangeNotifierProvider(create: (_) => SignUpViewModel()),
-    ChangeNotifierProvider(create: (_) => lankBankViewModel()),
-    ChangeNotifierProvider(create: (_) => notificationViewModel()),
+    ChangeNotifierProvider(create: (context) => OnboardingViewModel()),
+    ChangeNotifierProvider(create: (context) => LoginViewModel()),
+    ChangeNotifierProvider(create: (context) => userViewModel()),
+    ChangeNotifierProvider(create: (context) => LoginViewModel()),
+    ChangeNotifierProvider(create: (context) => SignUpViewModel()),
+    ChangeNotifierProvider(create: (context) => lankBankViewModel()),
+    ChangeNotifierProvider(create: (context) => notificationViewModel()),
+    ChangeNotifierProvider(create: (context) => Sendmoneyprovider()),
   ];
 }

@@ -7,4 +7,8 @@ class namePages {
   static final String profileView = 'profileView';
   static final String settingView = 'settingView';
   static final String lankBank = 'lankBank';
+  static String sendMoney = "sendMoney";
+  static String determinetheamountview = "Determinetheamountview";
+  static String sendingAgree = "sendingAgree";
+  static String sendingcomplateview = "sendingcomplateview";
 }
