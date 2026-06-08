@@ -1,4 +1,7 @@
 import 'package:financial_app/core/constants/appColors.dart';
+import 'package:financial_app/feature/activities/view/activityScreen.dart';
+import 'package:financial_app/feature/activities/widget/activityCard.dart';
+
 import 'package:financial_app/feature/homePage/view/homePage.dart';
 import 'package:financial_app/feature/homePage/viewModel/homePageViewModel.dart';
 import 'package:financial_app/route/namePages.dart';
@@ -9,8 +12,9 @@ class homepageview extends StatelessWidget {
   homepageview({super.key});
   List<Widget> widgetBottomNavigationBar = [
     homePage(),
+
     Text('2'),
-    Text('3'),
+    activityScreen(),
     Text('4'),
   ];
 
@@ -30,8 +34,10 @@ class homepageview extends StatelessWidget {
           showUnselectedLabels: true,
           currentIndex: value.index,
           onTap: (index) {
-            if (index == 2)
+            if (index == 1)
               Navigator.of(context).pushNamed(namePages.sendMoney);
+            else if (index == 3)
+              Navigator.of(context).pushNamed(namePages.settingView);
             else
               value.goToScreen(index);
           },
@@ -41,16 +47,16 @@ class homepageview extends StatelessWidget {
               label: 'Banking',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.credit_card),
-              label: 'Card',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.payments_outlined),
               label: 'Pay',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
               label: 'Activity',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Setting',
             ),
           ],
         ),

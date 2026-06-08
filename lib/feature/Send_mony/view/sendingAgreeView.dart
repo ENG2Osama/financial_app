@@ -3,6 +3,7 @@ import 'package:financial_app/core/constants/appSizes.dart';
 import 'package:financial_app/core/theme/light/textThemeLight.dart';
 import 'package:financial_app/core/widgets/ButtomPrimary.dart';
 import 'package:financial_app/feature/Send_mony/viewModel/sendMoneyProvider.dart';
+import 'package:financial_app/feature/activities/viewmodel/activityViewModel.dart';
 import 'package:financial_app/feature/Setting/viewModel/notificationViewModel.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:financial_app/route/namePages.dart';
@@ -188,6 +189,14 @@ class Sendingagreeview extends StatelessWidget {
                           provider.addSendingOperation(
                             Sendmoneyprovider.sendModel,
                           );
+
+                          // record activity
+                          try {
+                            context.read<activityViewModel>().recordSendMoney(
+                                  amount: Sendmoneyprovider.sendModel.sendingAmount,
+                                  to: Sendmoneyprovider.sendModel.reciverName,
+                                );
+                          } catch (_) {}
 
                           Navigator.pushNamed(
                             context,

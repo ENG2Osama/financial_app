@@ -42,7 +42,7 @@ class Determinetheamountview extends StatelessWidget {
 
               height: 70,
               width: 70,
-              child: Icon(Icons.person_outline_rounded),
+              child: Icon(Icons.person_outline_rounded, size: 40),
             ),
           ),
 

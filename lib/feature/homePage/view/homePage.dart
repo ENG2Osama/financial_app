@@ -129,7 +129,11 @@ class homePage extends StatelessWidget {
                       backgroundColor: appColors.secondary,
                       foregroundColor: appColors.onSecondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).pushNamed(namePages.ReceiveMoneyView);
+                    },
                     child: Row(
                       children: [
                         Icon(Icons.arrow_upward_sharp, size: 20),
@@ -162,7 +166,9 @@ class homePage extends StatelessWidget {
                       iconCard: Icon(Icons.history, color: appColors.secondary),
                       titleCard: 'Previous Activity',
                       subtitleCard: "View History",
-                      OnTap: () {},
+                      OnTap: () {
+                        Navigator.of(context).pushNamed(namePages.activity);
+                      },
                     ),
                     customerViewCardHomePage(
                       iconCard: Icon(
@@ -175,7 +181,7 @@ class homePage extends StatelessWidget {
                         Navigator.of(
                           context,
                         ).pushNamed(namePages.lankBank).then((value) {
-                          if (value == true)
+                          if (value == true) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -185,15 +191,23 @@ class homePage extends StatelessWidget {
                                 ),
                               ),
                             );
+                          }
                         });
                       },
                     ),
                     customerViewCardHomePage(
-                      iconCard: Icon(Icons.tune, color: appColors.secondary),
-                      titleCard: 'Spending Limits',
+                      iconCard: Icon(
+                        Icons.notifications,
+                        color: appColors.secondary,
+                      ),
+                      titleCard: 'Notification',
 
-                      subtitleCard: "Manage controls",
-                      OnTap: () {},
+                      subtitleCard: "View Notification",
+                      OnTap: () {
+                        Navigator.of(
+                          context,
+                        ).pushNamed(namePages.notificationPage);
+                      },
                     ),
                     customerViewCardHomePage(
                       iconCard: Icon(

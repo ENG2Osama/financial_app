@@ -17,8 +17,6 @@ class Sendmoneyprovider with ChangeNotifier {
     balance = context.read<userViewModel>().BalanceGet;
   }
 
-  
-
   void choicPerson(SendModel sendModelmodel, String controllerText) {
     sendModelmodel.reciverName = controllerText;
     sendModel = sendModelmodel;
@@ -42,7 +40,9 @@ class Sendmoneyprovider with ChangeNotifier {
 
   void addSendingOperation(SendModel sendModel) {
     sendModel.id++;
+
     Sendmoneyrepo.sendingOperationList.add(sendModel);
+    Sendmoneyrepo.toSetToList();
     length++;
     notifyListeners();
   }

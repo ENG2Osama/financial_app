@@ -1,3 +1,4 @@
+import 'package:financial_app/feature/activities/viewmodel/activityViewModel.dart';
 import 'package:financial_app/feature/auth/viewmodel/usesViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -57,7 +58,8 @@ class SignUpViewModel extends ChangeNotifier {
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) return 'Email is required';
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    if (!emailRegex.hasMatch(value.trim())) return 'Enter a valid email address';
+    if (!emailRegex.hasMatch(value.trim()))
+      return 'Enter a valid email address';
     return null;
   }
 
@@ -82,30 +84,30 @@ class SignUpViewModel extends ChangeNotifier {
   Future<void> signUp(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
 
-
     _status = SignUpStatus.loading;
     _errorMessage = null;
     notifyListeners();
 
     await Future.delayed(const Duration(seconds: 2));
     context.read<userViewModel>().addUser(
-        UserModel(
+      UserModel(
         firstName: firstNameController.text.trim(),
         lastName: lastNameController.text.trim(),
         email: emailController.text.trim(),
-        password: passwordController.text
-        ,Balance: 0.0,
-          phone: "There is NO",
-          country: "There is NO",
-          linkedBanks: [
+        password: passwordController.text,
+        Balance: 0.0,
+        phone: "There is NO",
+        country: "There is NO",
+        linkedBanks: [
           ]
-    ));
-//osa@gmail.com
-
+    ),
+    );
+    //osa@gmail.com
 
     _status = SignUpStatus.success;
     notifyListeners();
 
+  context.read<activityViewModel>().recordSignUp();
    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created',style: Theme.of(context).textTheme.bodySmall!.copyWith(
      color: appColors.success
    ),)));

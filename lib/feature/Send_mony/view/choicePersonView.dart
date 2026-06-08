@@ -60,7 +60,7 @@ class Choicepersonview extends StatelessWidget {
             child: Text("RECENTS", style: Textthemelight.textTheme.bodySmall),
           ),
           SizedBox(
-            height: 300,
+            height: 250,
             child: Consumer<Sendmoneyprovider>(
               builder: (context, pro, child) {
                 if (pro.length != 0) {
@@ -69,11 +69,6 @@ class Choicepersonview extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
                         onTap: () {
-                          print(
-                            Sendmoneyrepo.sendingOperationList.length -
-                                1 -
-                                index,
-                          );
                           SendModel sendModel = SendModel();
                           pro.choicPerson(
                             sendModel,

@@ -1,8 +1,12 @@
 import 'package:financial_app/feature/Setting/view/settingView.dart';
+import 'package:financial_app/feature/activities/view/activityScreen.dart';
+
 import 'package:financial_app/feature/auth/view/loginPageView.dart';
 import 'package:financial_app/feature/auth/view/signUpPageView.dart';
 import 'package:financial_app/feature/homePage/view/homePageView.dart';
 import 'package:financial_app/feature/onboarding/view/onboarding_view.dart';
+import 'package:financial_app/feature/recive/error/view/errorView.dart';
+import 'package:financial_app/feature/recive/receiveMoney/view/receiveMoneyView.dart';
 import 'package:financial_app/route/namePages.dart';
 import 'package:flutter/material.dart';
 
@@ -32,5 +36,8 @@ class appRoute {
     namePages.determinetheamountview: (context) => Determinetheamountview(),
     namePages.sendingAgree: (context) => Sendingagreeview(),
     namePages.sendingcomplateview: (context) => Sendingcomplateview(),
+    namePages.activity: (_) => const activityScreen(),
+    namePages.ReceiveMoneyView: (_) => ReceiveMoneyView(),
+    namePages.ErrorView: (_) => const ErrorView(),
   };
 }
