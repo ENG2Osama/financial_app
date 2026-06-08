@@ -38,8 +38,10 @@ class Choicepersonview extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
-          Form(key: formKey,
-            child: Container(padding: EdgeInsets.all(appSizes.padding),
+          Form(
+            key: formKey,
+            child: Container(
+              padding: EdgeInsets.all(appSizes.padding),
               child: CustomTextFieldWidget(
                 hintText: "Name, Account Number, @cachtag",
                 keyboardType: TextInputType.text,
@@ -65,11 +67,37 @@ class Choicepersonview extends StatelessWidget {
                   return ListView.builder(
                     itemCount: Sendmoneyrepo.sendingOperationList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Recentscards(
-                        title: Sendmoneyrepo
-                            .sendingOperationList[index]
-                            .reciverName,
-                        suptitle: "@arivera",
+                      return InkWell(
+                        onTap: () {
+                          print(
+                            Sendmoneyrepo.sendingOperationList.length -
+                                1 -
+                                index,
+                          );
+                          SendModel sendModel = SendModel();
+                          pro.choicPerson(
+                            sendModel,
+                            Sendmoneyrepo
+                                .sendingOperationList[Sendmoneyrepo
+                                        .sendingOperationList
+                                        .length -
+                                    1 -
+                                    index]
+                                .reciverName,
+                          );
+
+                          print(Sendmoneyprovider.sendModel.reciverName);
+                          Navigator.pushNamed(
+                            context,
+                            namePages.determinetheamountview,
+                          );
+                        },
+                        child: Recentscards(
+                          title: Sendmoneyrepo
+                              .sendingOperationList[index]
+                              .reciverName,
+                          suptitle: "@arivera",
+                        ),
                       );
                     },
                   );

@@ -23,7 +23,7 @@ class homePage extends StatelessWidget {
           'Home',
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
             fontWeight: FontWeight.bold,
-            fontSize: 30.sp,
+            fontSize: 32,
           ),
         ),
         actions: [
@@ -196,10 +196,15 @@ class homePage extends StatelessWidget {
                       OnTap: () {},
                     ),
                     customerViewCardHomePage(
-                      iconCard: Icon(Icons.lock, color: appColors.secondary),
-                      titleCard: 'Security ',
-                      subtitleCard: "App protection",
-                      OnTap: () {},
+                      iconCard: Icon(
+                        Icons.settings,
+                        color: appColors.secondary,
+                      ),
+                      titleCard: 'Setting ',
+                      subtitleCard: "Modify Setting",
+                      OnTap: () {
+                        Navigator.of(context).pushNamed(namePages.settingView);
+                      },
                     ),
                   ],
                 ),

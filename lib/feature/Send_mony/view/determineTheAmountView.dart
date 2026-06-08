@@ -51,6 +51,9 @@ class Determinetheamountview extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(appSizes.padding),
               child: CustomTextFieldWidget(
+                validator: (value) {
+                  if (value!.isEmpty) return 'Field Required';
+                },
                 hintText: 'Add The Amount...',
                 keyboardType: TextInputType.number,
                 controller: numberController,

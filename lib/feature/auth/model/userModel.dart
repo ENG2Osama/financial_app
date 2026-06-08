@@ -5,10 +5,10 @@ class UserModel {
   final String password;
   final String country;
   final String phone;
-   double Balance=0.0;
-  List<Map<String,String>> linkedBanks;
+  double Balance = 0.0;
+  List<Map<String, String>> linkedBanks;
 
-   UserModel({
+  UserModel({
     required this.firstName,
     required this.lastName,
     required this.email,
@@ -19,11 +19,26 @@ class UserModel {
     required this.linkedBanks,
   });
 
-
-
-
-
-  static List<Map> localUsers=[
+  static List<Map> localUsers = [
+    {
+      "firstName": "Osama",
+      "lastName": "Ahmed",
+      "email": "osamA1@gmail.com",
+      "phone": "+967778972159",
+      "country": "Yemen",
+      "balance": 500.50,
+      "password": "Osama_123",
+      "linkedBanks": [
+        {
+          "bankName": "Alkuraimi Islamic Microfinance Bank",
+          "bankNumber": "482098327",
+        },
+        {
+          "bankName": "Tadhamon International Islamic Bank",
+          "bankNumber": "436858383",
+        },
+      ],
+    },
     {
       "firstName": "Ahmed",
       "lastName": "AlAriqi",
@@ -33,8 +48,14 @@ class UserModel {
       "balance": 1500.50,
       "password": "Ahmed_1023",
       "linkedBanks": [
-        {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "123456789"},
-        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "987654321"}
+        {
+          "bankName": "Alkuraimi Islamic Microfinance Bank",
+          "bankNumber": "123456789",
+        },
+        {
+          "bankName": "Tadhamon International Islamic Bank",
+          "bankNumber": "987654321",
+        },
       ],
     },
     {
@@ -47,7 +68,7 @@ class UserModel {
       "password": "Sara_2045",
       "linkedBanks": [
         {"bankName": "CAC Bank", "bankNumber": "234567891"},
-        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "876543219"}
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "876543219"},
       ],
     },
     {
@@ -60,7 +81,7 @@ class UserModel {
       "password": "Khaled_3187",
       "linkedBanks": [
         {"bankName": "Saba Islamic Bank", "bankNumber": "345678912"},
-        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "765432198"}
+        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "765432198"},
       ],
     },
     {
@@ -73,7 +94,7 @@ class UserModel {
       "password": "Fatima_4261",
       "linkedBanks": [
         {"bankName": "National Bank of Yemen", "bankNumber": "456789123"},
-        {"bankName": "Yemen Kuwait Bank", "bankNumber": "654321987"}
+        {"bankName": "Yemen Kuwait Bank", "bankNumber": "654321987"},
       ],
     },
     {
@@ -85,8 +106,11 @@ class UserModel {
       "balance": 120.00,
       "password": "Yousef_5374",
       "linkedBanks": [
-        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "567891234"},
-        {"bankName": "QNB Yemen", "bankNumber": "543219876"}
+        {
+          "bankName": "Shamil Bank of Yemen and Bahrain",
+          "bankNumber": "567891234",
+        },
+        {"bankName": "QNB Yemen", "bankNumber": "543219876"},
       ],
     },
     {
@@ -98,8 +122,11 @@ class UserModel {
       "balance": 5600.40,
       "password": "Reem_6482",
       "linkedBanks": [
-        {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "678912345"},
-        {"bankName": "CAC Bank", "bankNumber": "432198765"}
+        {
+          "bankName": "Alkuraimi Islamic Microfinance Bank",
+          "bankNumber": "678912345",
+        },
+        {"bankName": "CAC Bank", "bankNumber": "432198765"},
       ],
     },
     {
@@ -111,8 +138,11 @@ class UserModel {
       "balance": 230.15,
       "password": "Mazen_7529",
       "linkedBanks": [
-        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "789123456"},
-        {"bankName": "Saba Islamic Bank", "bankNumber": "321987654"}
+        {
+          "bankName": "Tadhamon International Islamic Bank",
+          "bankNumber": "789123456",
+        },
+        {"bankName": "Saba Islamic Bank", "bankNumber": "321987654"},
       ],
     },
     {
@@ -125,7 +155,7 @@ class UserModel {
       "password": "Nora_8641",
       "linkedBanks": [
         {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "891234567"},
-        {"bankName": "National Bank of Yemen", "bankNumber": "219876543"}
+        {"bankName": "National Bank of Yemen", "bankNumber": "219876543"},
       ],
     },
     {
@@ -138,7 +168,10 @@ class UserModel {
       "password": "Ali_9752",
       "linkedBanks": [
         {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "912345678"},
-        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "198765432"}
+        {
+          "bankName": "Shamil Bank of Yemen and Bahrain",
+          "bankNumber": "198765432",
+        },
       ],
     },
     {
@@ -151,7 +184,7 @@ class UserModel {
       "password": "Maha_1086",
       "linkedBanks": [
         {"bankName": "Yemen Kuwait Bank", "bankNumber": "135792468"},
-        {"bankName": "QNB Yemen", "bankNumber": "864297531"}
+        {"bankName": "QNB Yemen", "bankNumber": "864297531"},
       ],
     },
     {
@@ -164,7 +197,10 @@ class UserModel {
       "password": "Hassan_2194",
       "linkedBanks": [
         {"bankName": "Saba Islamic Bank", "bankNumber": "357924681"},
-        {"bankName": "Tadhamon International Islamic Bank", "bankNumber": "642813579"}
+        {
+          "bankName": "Tadhamon International Islamic Bank",
+          "bankNumber": "642813579",
+        },
       ],
     },
     {
@@ -177,7 +213,7 @@ class UserModel {
       "password": "Layan_3307",
       "linkedBanks": [
         {"bankName": "National Bank of Yemen", "bankNumber": "468135792"},
-        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"}
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"},
       ],
     },
     {
@@ -190,7 +226,7 @@ class UserModel {
       "password": "Tariq_4418",
       "linkedBanks": [
         {"bankName": "National Bank of Yemen", "bankNumber": "468135792"},
-        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"}
+        {"bankName": "Yemen Bahrain Shamil Bank", "bankNumber": "531792468"},
       ],
     },
     {
@@ -202,8 +238,11 @@ class UserModel {
       "balance": 670.45,
       "password": "Hend_5529",
       "linkedBanks": [
-        {"bankName": "Shamil Bank of Yemen and Bahrain", "bankNumber": "579246813"},
-        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "428613795"}
+        {
+          "bankName": "Shamil Bank of Yemen and Bahrain",
+          "bankNumber": "579246813",
+        },
+        {"bankName": "Al-Amal Microfinance Bank", "bankNumber": "428613795"},
       ],
     },
     {
@@ -216,12 +255,8 @@ class UserModel {
       "password": "Abdullah_6631",
       "linkedBanks": [
         {"bankName": "QNB Yemen", "bankNumber": "681357924"},
-        {"bankName": "Yemen Kuwait Bank", "bankNumber": "317924685"}
+        {"bankName": "Yemen Kuwait Bank", "bankNumber": "317924685"},
       ],
-    }
-  ]
- ;
-
-
-
+    },
+  ];
 }

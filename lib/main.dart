@@ -37,7 +37,7 @@ class mainPage extends StatelessWidget {
     intilSharePreferences();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.homePage,
+      initialRoute: namePages.onboarding,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

@@ -14,30 +14,45 @@ class notification extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notifications',style: TextStyle(fontWeight: FontWeight.bold),),
-        leading: IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        }, icon: Icon(Icons.arrow_back_outlined),iconSize: 30,),
-        actions: [
-          IconButton(onPressed: (){
+        title: Text(
+          'Notifications',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          onPressed: () {
             Navigator.of(context).pop();
-          }, icon: Icon(Icons.settings_outlined),iconSize: 30,)
+          },
+          icon: Icon(Icons.arrow_back_outlined),
+          iconSize: 30,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.settings_outlined),
+            iconSize: 30,
+          ),
         ],
-      ),backgroundColor: appColors.bgCard,
+      ),
+      backgroundColor: appColors.bgCard,
       body: Container(
         padding: EdgeInsets.all(appSizes.padding),
-        child: Selector<notificationViewModel,List<Map>>(
-          builder: (context, value, child) =>value.length==0?Center(child: Text("There is NO"),): ListView.builder(itemBuilder:(context, index) =>
-          customerCardNotifications(title: "${value[index]["title"]}",
-            time: value[index]["time"],subTitle: "${value[index]["subtitle"]}",),
-              itemCount: value.length,
-          ) ,
-          selector: (BuildContext context, notificationViewModel value) =>value.notification,),
-           )
-
-      
-
-    )
-      ;
+        child: Selector<notificationViewModel, List<Map>>(
+          builder: (context, value, child) => value.length == 0
+              ? Center(child: Text("There is NO"))
+              : ListView.builder(
+                  itemBuilder: (context, index) => customerCardNotifications(
+                    title: "${value[value.length - 1 - index]["title"]}",
+                    time: value[value.length - 1 - index]["time"],
+                    subTitle: "${value[value.length - 1 - index]["subtitle"]}",
+                  ),
+                  itemCount: value.length,
+                ),
+          selector: (BuildContext context, notificationViewModel value) =>
+              value.notification,
+        ),
+      ),
+    );
   }
 }

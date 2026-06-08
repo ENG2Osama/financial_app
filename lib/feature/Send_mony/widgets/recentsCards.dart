@@ -9,19 +9,26 @@ class Recentscards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: appColors.primary,
-            borderRadius: BorderRadius.circular(20),
+    return Container(
+      margin: EdgeInsets.only(bottom: 2),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Card(
+        child: ListTile(
+          leading: Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: appColors.primary,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Icon(Icons.person_2_rounded),
           ),
-          child: Icon(Icons.person_2_rounded),
+          title: Text("$title", style: Textthemelight.textTheme.bodyMedium),
+          subtitle: Text(
+            "$suptitle",
+            style: Textthemelight.textTheme.bodySmall,
+          ),
         ),
-        title: Text("$title", style: Textthemelight.textTheme.bodyMedium),
-        subtitle: Text("$suptitle", style: Textthemelight.textTheme.bodySmall),
       ),
     );
   }
