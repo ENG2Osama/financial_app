@@ -12,7 +12,7 @@ void main() {
     MultiProvider(
       providers: ListChangeProvider.ListProvider,
       child: ScreenUtilInit(
-        designSize: const Size(360, 690),
+        designSize: ScreenUtil.defaultSize,
         minTextAdapt: true,
         splitScreenMode: true,
 
@@ -24,20 +24,12 @@ void main() {
 
 class mainPage extends StatelessWidget {
   mainPage({super.key});
-  late SharedPreferences sharedPreferences;
-  bool isLogin = false;
-  Future<void> intilSharePreferences() async {
-    sharedPreferences = await SharedPreferences.getInstance();
-    bool isLogin =
-        bool.parse(sharedPreferences.get('isLogin').toString()) ?? false;
-  }
 
   @override
   Widget build(BuildContext context) {
-    intilSharePreferences();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: namePages.onboarding,
+      initialRoute: NamePages.onboarding,
       theme: appTheme.lightTheme,
       routes: appRoute.routes,
     );

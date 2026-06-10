@@ -64,7 +64,7 @@ class settingView extends StatelessWidget {
             SizedBox(height: 10),
             customerViewSettings(
               actionDo: () {
-                Navigator.of(context).pushNamed(namePages.profileView);
+                Navigator.of(context).pushNamed(NamePages.profileView);
               },
               title: "Profile",
               iconItemSetting: Icon(
@@ -111,7 +111,7 @@ class settingView extends StatelessWidget {
             SizedBox(height: 15),
             customerViewSettings(
               actionDo: () {
-                Navigator.of(context).pushNamed(namePages.notificationPage);
+                Navigator.of(context).pushNamed(NamePages.notificationPage);
               },
               title: "Notifications",
               iconItemSetting: Icon(
@@ -141,7 +141,7 @@ class settingView extends StatelessWidget {
               ),
               child: ListTile(
                 onTap: () {
-                  Navigator.of(context).popAndPushNamed(namePages.login);
+                  Navigator.of(context).popAndPushNamed(NamePages.login);
                 },
                 title: Text(
                   'Logout',

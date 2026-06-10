@@ -193,14 +193,14 @@ class Sendingagreeview extends StatelessWidget {
                           // record activity
                           try {
                             context.read<activityViewModel>().recordSendMoney(
-                                  amount: Sendmoneyprovider.sendModel.sendingAmount,
-                                  to: Sendmoneyprovider.sendModel.reciverName,
-                                );
+                              amount: Sendmoneyprovider.sendModel.sendingAmount,
+                              to: Sendmoneyprovider.sendModel.reciverName,
+                            );
                           } catch (_) {}
 
                           Navigator.pushNamed(
                             context,
-                            namePages.sendingcomplateview,
+                            NamePages.sendingcomplateview,
                           );
                         },
                       ),
@@ -209,7 +209,7 @@ class Sendingagreeview extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.popAndPushNamed(context, namePages.homePage);
+                    Navigator.popAndPushNamed(context, NamePages.homePage);
                   },
                   child: Container(
                     height: 50,

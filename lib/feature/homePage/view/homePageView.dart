@@ -35,9 +35,9 @@ class homepageview extends StatelessWidget {
           currentIndex: value.index,
           onTap: (index) {
             if (index == 1)
-              Navigator.of(context).pushNamed(namePages.sendMoney);
+              Navigator.of(context).pushNamed(NamePages.sendMoney);
             else if (index == 3)
-              Navigator.of(context).pushNamed(namePages.settingView);
+              Navigator.of(context).pushNamed(NamePages.settingView);
             else
               value.goToScreen(index);
           },

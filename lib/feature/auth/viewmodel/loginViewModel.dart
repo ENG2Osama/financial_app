@@ -11,7 +11,6 @@ enum LoginStatus { idle, loading, success, error }
 class LoginViewModel extends ChangeNotifier {
   // ── Form key ──────────────────────────────────────────────────────────────────
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  userViewModel _userViewModel = userViewModel();
 
   // ── Controllers ───────────────────────────────────────────────────────────────
   final TextEditingController emailController = TextEditingController();
@@ -46,29 +45,35 @@ class LoginViewModel extends ChangeNotifier {
     return null;
   }
 
-
   Future<void> login(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
-    bool isfound=await context.read<userViewModel>().foundUser(emailController.text.trim(), passwordController.text.trim());
-if(!isfound) {
-  _status = LoginStatus.loading;
-  _errorMessage = null;
-  notifyListeners();
+    bool isfound = await context.read<userViewModel>().foundUser(
+      emailController.text.trim(),
+      passwordController.text.trim(),
+    );
+    if (!isfound) {
+      _status = LoginStatus.loading;
+      _errorMessage = null;
+      notifyListeners();
 
-  await Future.delayed(const Duration(seconds: 2));
-  _status = LoginStatus.success;
-  notifyListeners();
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text('Email or Password incorrect',style:Theme.of(context).textTheme.bodySmall!.
-      copyWith(color: appColors.error),)));
-  emailController.text="";
-  passwordController.text="";
-  return ;
-}
-
-
-
-
+      await Future.delayed(const Duration(seconds: 2));
+      _status = LoginStatus.error;
+      _errorMessage = 'Email or Password incorrect';
+      notifyListeners();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            _errorMessage!,
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall!.copyWith(color: appColors.error),
+          ),
+        ),
+      );
+      emailController.text = "";
+      passwordController.text = "";
+      return;
+    }
 
     _status = LoginStatus.loading;
     _errorMessage = null;
@@ -80,18 +85,23 @@ if(!isfound) {
     notifyListeners();
 
     context.read<activityViewModel>().recordLogin();
-    Navigator.of(context).pushReplacementNamed(namePages.homePage);
-    
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Login Successful',style: 
-        Theme.of(context).textTheme.bodySmall!.copyWith(
-        color: appColors.success
-    ),)));
-  }
-  void cleanTextEditingControler(){
+    Navigator.of(context).pushReplacementNamed(NamePages.homePage);
 
-    emailController.text="";
-    passwordController.text="";
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          'Login Successful',
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall!.copyWith(color: appColors.success),
+        ),
+      ),
+    );
+  }
+
+  void cleanTextEditingControler() {
+    emailController.text = "";
+    passwordController.text = "";
   }
 
   @override

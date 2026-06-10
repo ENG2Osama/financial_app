@@ -8,7 +8,6 @@ import '../model/userModel.dart';
 enum SignUpStatus { idle, loading, success, error }
 
 class SignUpViewModel extends ChangeNotifier {
-  // ── Form key ─────────────────────────────────────────────────────────────────
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   // ── Controllers ──────────────────────────────────────────────────────────────
@@ -31,7 +30,6 @@ class SignUpViewModel extends ChangeNotifier {
   String? get errorMessage => _errorMessage;
   bool get isLoading => _status == SignUpStatus.loading;
 
-  // ── Toggle visibility ─────────────────────────────────────────────────────────
   void togglePasswordVisibility() {
     _obscurePassword = !_obscurePassword;
     notifyListeners();
@@ -89,6 +87,9 @@ class SignUpViewModel extends ChangeNotifier {
     notifyListeners();
 
     await Future.delayed(const Duration(seconds: 2));
+
+    if (!context.mounted) return;
+
     context.read<userViewModel>().addUser(
       UserModel(
         firstName: firstNameController.text.trim(),
@@ -98,28 +99,38 @@ class SignUpViewModel extends ChangeNotifier {
         Balance: 0.0,
         phone: "There is NO",
         country: "There is NO",
-        linkedBanks: [
-          ]
-    ),
+        linkedBanks: [],
+      ),
     );
-    //osa@gmail.com
 
     _status = SignUpStatus.success;
     notifyListeners();
 
-  context.read<activityViewModel>().recordSignUp();
-   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account Created',style: Theme.of(context).textTheme.bodySmall!.copyWith(
-     color: appColors.success
-   ),)));
-   cleanTextEditingControler();
-   Navigator.of(context).pop();
+    if (!context.mounted) return;
+
+    context.read<activityViewModel>().recordSignUp();
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          'Account Created',
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall!.copyWith(color: appColors.success),
+        ),
+      ),
+    );
+
+    cleanTextEditingControler();
+    Navigator.of(context).pop();
   }
-  void cleanTextEditingControler(){
-    firstNameController.text="";
-    lastNameController.text="";
-    emailController.text="";
-    passwordController.text="";
-    confirmPasswordController.text="";
+
+  void cleanTextEditingControler() {
+    firstNameController.text = "";
+    lastNameController.text = "";
+    emailController.text = "";
+    passwordController.text = "";
+    confirmPasswordController.text = "";
   }
 
   @override

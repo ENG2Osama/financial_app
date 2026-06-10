@@ -36,7 +36,7 @@ class homePage extends StatelessWidget {
                 iconSize: 23,
                 icon: Icon(Icons.person),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(namePages.profileView);
+                  Navigator.of(context).pushNamed(NamePages.profileView);
                 },
               ),
             ),
@@ -45,7 +45,7 @@ class homePage extends StatelessWidget {
         leading: IconButton(
           iconSize: 30,
           onPressed: () {
-            Navigator.of(context).pushNamed(namePages.settingView);
+            Navigator.of(context).pushNamed(NamePages.settingView);
           },
           icon: Icon(Icons.format_list_bulleted),
         ),
@@ -108,7 +108,7 @@ class homePage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(namePages.sendMoney);
+                      Navigator.of(context).pushNamed(NamePages.sendMoney);
                     },
                     child: Row(
                       children: [
@@ -132,7 +132,7 @@ class homePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(
                         context,
-                      ).pushNamed(namePages.ReceiveMoneyView);
+                      ).pushNamed(NamePages.ReceiveMoneyView);
                     },
                     child: Row(
                       children: [
@@ -167,7 +167,7 @@ class homePage extends StatelessWidget {
                       titleCard: 'Previous Activity',
                       subtitleCard: "View History",
                       OnTap: () {
-                        Navigator.of(context).pushNamed(namePages.activity);
+                        Navigator.of(context).pushNamed(NamePages.activity);
                       },
                     ),
                     customerViewCardHomePage(
@@ -180,7 +180,7 @@ class homePage extends StatelessWidget {
                       OnTap: () {
                         Navigator.of(
                           context,
-                        ).pushNamed(namePages.lankBank).then((value) {
+                        ).pushNamed(NamePages.lankBank).then((value) {
                           if (value == true) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -206,7 +206,7 @@ class homePage extends StatelessWidget {
                       OnTap: () {
                         Navigator.of(
                           context,
-                        ).pushNamed(namePages.notificationPage);
+                        ).pushNamed(NamePages.notificationPage);
                       },
                     ),
                     customerViewCardHomePage(
@@ -217,7 +217,7 @@ class homePage extends StatelessWidget {
                       titleCard: 'Setting ',
                       subtitleCard: "Modify Setting",
                       OnTap: () {
-                        Navigator.of(context).pushNamed(namePages.settingView);
+                        Navigator.of(context).pushNamed(NamePages.settingView);
                       },
                     ),
                   ],

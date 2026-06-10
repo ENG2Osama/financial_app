@@ -86,7 +86,7 @@ class Determinetheamountview extends StatelessWidget {
                           String stringDate = date.toString().substring(0, 10);
                           provider.sendDateFun(stringDate);
 
-                          Navigator.pushNamed(context, namePages.sendingAgree);
+                          Navigator.pushNamed(context, NamePages.sendingAgree);
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(

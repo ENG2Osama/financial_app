@@ -23,10 +23,9 @@ class LoginPageView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const SizedBox(height: 56),
 
-                 Text(
+                Text(
                   'Welcome Back',
                   style: TextStyle(
                     fontSize: 34,
@@ -38,7 +37,7 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 8),
 
-                 Text(
+                Text(
                   'Sign in to continue',
                   style: TextStyle(
                     fontSize: 15,
@@ -48,7 +47,7 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 40),
 
-                 Text(
+                Text(
                   'Email',
                   style: TextStyle(
                     fontSize: 13,
@@ -69,7 +68,7 @@ class LoginPageView extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                 Text(
+                Text(
                   'Password',
                   style: TextStyle(
                     fontSize: 13,
@@ -101,7 +100,7 @@ class LoginPageView extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
-                    child:  Text(
+                    child: Text(
                       'Forgot Password?',
                       style: TextStyle(
                         fontSize: 13,
@@ -125,7 +124,7 @@ class LoginPageView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
+                    Text(
                       "Don't have an account? ",
                       style: TextStyle(
                         fontSize: 14,
@@ -133,15 +132,10 @@ class LoginPageView extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
-
                       onTap: () {
-                        vm.cleanTextEditingControler();
-                        Navigator.pushNamed(
-                        context,
-                        namePages.signUp,
-                      );
-                        },
-                      child:  Text(
+                        Navigator.of(context).pushNamed(NamePages.signUp);
+                      },
+                      child: Text(
                         'Sign Up',
                         style: TextStyle(
                           fontSize: 14,
@@ -154,7 +148,6 @@ class LoginPageView extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 32),
-
               ],
             ),
           ),

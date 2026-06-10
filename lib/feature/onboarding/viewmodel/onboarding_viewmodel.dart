@@ -14,11 +14,12 @@ class OnboardingViewModel extends ChangeNotifier {
 
   bool get isFirstPage => _currentIndex == 0;
   bool get isLastPage => _currentIndex == pages.length - 1;
-  String get buttonLabel => isLastPage ? AppStrings.getStarted : AppStrings.next;
+  String get buttonLabel =>
+      isLastPage ? AppStrings.getStarted : AppStrings.next;
 
   final List<OnboardingModel> pages = List.generate(
     AppStrings.onboardingTitles.length,
-        (i) => OnboardingModel(
+    (i) => OnboardingModel(
       image: AppStrings.onboardingImages[i],
       title: AppStrings.onboardingTitles[i],
       description: AppStrings.onboardingDescriptions[i],
@@ -39,7 +40,7 @@ class OnboardingViewModel extends ChangeNotifier {
     } else {
       _completeOnboarding();
 
-      Navigator.pushReplacementNamed(context, namePages.login);
+      Navigator.pushReplacementNamed(context, NamePages.login);
     }
   }
 
@@ -54,7 +55,7 @@ class OnboardingViewModel extends ChangeNotifier {
 
   void skip(BuildContext context) {
     _completeOnboarding();
-    Navigator.pushReplacementNamed(context, namePages.login);
+    Navigator.pushReplacementNamed(context, NamePages.login);
   }
 
   Future<void> _completeOnboarding() async {

@@ -84,7 +84,7 @@ class ReceiveMoneyView extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(namePages.ErrorView);
+                      Navigator.of(context).pushNamed(NamePages.ErrorView);
                       print("تم حفظ الباركود");
                     },
                     icon: Icon(Icons.download_rounded, size: 26),
@@ -111,7 +111,7 @@ class ReceiveMoneyView extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(namePages.ErrorView);
+                      Navigator.of(context).pushNamed(NamePages.ErrorView);
 
                       myViewModel.shareLink();
                     },

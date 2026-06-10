@@ -84,7 +84,7 @@ class Choicepersonview extends StatelessWidget {
                           print(Sendmoneyprovider.sendModel.reciverName);
                           Navigator.pushNamed(
                             context,
-                            namePages.determinetheamountview,
+                            NamePages.determinetheamountview,
                           );
                         },
                         child: Recentscards(
@@ -158,7 +158,7 @@ class Choicepersonview extends StatelessWidget {
                       print(Sendmoneyprovider.sendModel.reciverName);
                       Navigator.pushNamed(
                         context,
-                        namePages.determinetheamountview,
+                        NamePages.determinetheamountview,
                       );
                     }
                   },

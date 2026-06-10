@@ -45,7 +45,7 @@ class UserModel {
       "email": "Obad@gmail.com",
       "phone": "+967736621891",
       "country": "Yemen Republic",
-      "balance": 15000000,
+      "balance": 150,
       "password": "Ahmed_1023",
       "linkedBanks": [
         {"bankName": "Alkuraimi Islamic Microfinance Bank", "bankNumber": "123456789"},

@@ -1,18 +1,3 @@
-# financial_app
+Ascent هو تطبيق مالي للهواتف الذكية صُمم خصيصًا للأشخاص ذوي مستويات القراءة والكتابة المنخفضة. يهدف التطبيق إلى تسهيل الوصول إلى الخدمات المالية من خلال واجهة مستخدم بسيطة تعتمد على العناصر البصرية والتغذية الراجعة الصوتية، مما يجعل تنفيذ المعاملات المالية أكثر سهولة ووضوحًا.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# financial_app
-# Ascent-Financial-app-
+يوفر التطبيق مجموعة من الخدمات الأساسية مثل عرض الرصيد، وإرسال الأموال، وربط الحسابات البنكية، ومتابعة سجل المعاملات. وقد تم تطويره وفق مبادئ التصميم المتمحور حول الإنسان (Human-Centered Design) لضمان تجربة استخدام سهلة وآمنة وشاملة لمختلف فئات المستخدمين.

@@ -20,7 +20,7 @@ class ErrorViewModel extends ChangeNotifier {
 
   void goBack(BuildContext context) {
     if (Navigator.canPop(context)) {
-      Navigator.popAndPushNamed(context, namePages.homePage);
+      Navigator.popAndPushNamed(context, NamePages.homePage);
     }
   }
 }

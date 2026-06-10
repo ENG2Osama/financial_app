@@ -126,7 +126,7 @@ class Sendingcomplateview extends StatelessWidget {
                 child: buttomprimary(
                   txt: "OK",
                   fun: () {
-                    Navigator.popAndPushNamed(context, namePages.homePage);
+                    Navigator.popAndPushNamed(context, NamePages.homePage);
                   },
                 ),
               ),

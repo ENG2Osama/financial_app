@@ -9,6 +9,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final String? Function(String?)? validator;
+  final AutovalidateMode autovalidateMode;
   final Widget? suffixIcon;
 
   const CustomTextFieldWidget({
@@ -19,6 +20,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.continueAction,
     this.validator,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.suffixIcon,
   });
 
@@ -29,17 +31,12 @@ class CustomTextFieldWidget extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
+      autovalidateMode: autovalidateMode,
       validator: validator,
-      style:  TextStyle(
-        fontSize: 15,
-        color: appColors.textPrimary,
-      ),
+      style: TextStyle(fontSize: 15, color: appColors.textPrimary),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(
-          fontSize: 15,
-          color: appColors.textHint,
-        ),
+        hintStyle: const TextStyle(fontSize: 15, color: appColors.textHint),
         filled: true,
         fillColor: appColors.bgCard,
         suffixIcon: suffixIcon,
@@ -57,29 +54,17 @@ class CustomTextFieldWidget extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide:  BorderSide(
-            color: appColors.primary,
-            width: 1.5,
-          ),
+          borderSide: BorderSide(color: appColors.primary, width: 1.5),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide:  BorderSide(
-            color: appColors.error,
-            width: 1.5,
-          ),
+          borderSide: BorderSide(color: appColors.error, width: 1.5),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide:  BorderSide(
-            color: appColors.error,
-            width: 1.5,
-          ),
+          borderSide: BorderSide(color: appColors.error, width: 1.5),
         ),
-        errorStyle:  TextStyle(
-          fontSize: 12,
-          color: appColors.error,
-        ),
+        errorStyle: TextStyle(fontSize: 12, color: appColors.error),
       ),
     );
   }

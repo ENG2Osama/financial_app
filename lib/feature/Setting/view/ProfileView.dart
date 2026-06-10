@@ -167,7 +167,7 @@ class profileView extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.of(context).popAndPushNamed(namePages.login);
+                    Navigator.of(context).popAndPushNamed(NamePages.login);
                   },
                   child: Text(
                     'Delete account',

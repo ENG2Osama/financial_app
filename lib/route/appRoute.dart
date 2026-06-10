@@ -18,26 +18,24 @@ import 'package:financial_app/feature/Send_mony/view/choicePersonView.dart';
 import 'package:financial_app/feature/Send_mony/view/determineTheAmountView.dart';
 import 'package:financial_app/feature/Send_mony/view/sendingAgreeView.dart';
 import 'package:financial_app/feature/Send_mony/view/sendingComplateView.dart';
-import 'package:financial_app/route/namePages.dart';
-import 'package:flutter/material.dart';
 
 class appRoute {
   static Map<String, WidgetBuilder> routes = {
-    namePages.homePage: (_) => homepageview(),
+    NamePages.homePage: (_) => homepageview(),
 
-    namePages.onboarding: (_) => OnboardingView(),
-    namePages.login: (_) => LoginPageView(),
-    namePages.signUp: (_) => SignUpPageView(),
-    namePages.notificationPage: (_) => notification(),
-    namePages.profileView: (_) => profileView(),
-    namePages.settingView: (_) => settingView(),
-    namePages.lankBank: (_) => lankBank(),
-    namePages.sendMoney: (context) => Choicepersonview(),
-    namePages.determinetheamountview: (context) => Determinetheamountview(),
-    namePages.sendingAgree: (context) => Sendingagreeview(),
-    namePages.sendingcomplateview: (context) => Sendingcomplateview(),
-    namePages.activity: (_) => const activityScreen(),
-    namePages.ReceiveMoneyView: (_) => ReceiveMoneyView(),
-    namePages.ErrorView: (_) => const ErrorView(),
+    NamePages.onboarding: (_) => OnboardingView(),
+    NamePages.login: (_) => LoginPageView(),
+    NamePages.signUp: (_) => SignUpPageView(),
+    NamePages.notificationPage: (_) => notification(),
+    NamePages.profileView: (_) => profileView(),
+    NamePages.settingView: (_) => settingView(),
+    NamePages.lankBank: (_) => lankBank(),
+    NamePages.sendMoney: (context) => Choicepersonview(),
+    NamePages.determinetheamountview: (context) => Determinetheamountview(),
+    NamePages.sendingAgree: (context) => Sendingagreeview(),
+    NamePages.sendingcomplateview: (context) => Sendingcomplateview(),
+    NamePages.activity: (_) => const activityScreen(),
+    NamePages.ReceiveMoneyView: (_) => ReceiveMoneyView(),
+    NamePages.ErrorView: (_) => const ErrorView(),
   };
 }

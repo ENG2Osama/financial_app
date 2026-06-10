@@ -7,8 +7,10 @@ import '../../../core/widgets/customTextFieldWidget.dart';
 import '../widgets/customButtonWidget.dart';
 
 class SignUpPageView extends StatelessWidget {
-   SignUpPageView({super.key});
-  customerBottomSheetHelp _customerBottomSheetHelp= customerBottomSheetHelp();
+  SignUpPageView({super.key});
+  final customerBottomSheetHelp _customerBottomSheetHelp =
+      customerBottomSheetHelp();
+
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<SignUpViewModel>();
@@ -26,18 +28,15 @@ class SignUpPageView extends StatelessWidget {
               color: appColors.bgCard,
               shape: BoxShape.circle,
             ),
-            child:  Icon(
-              Icons.arrow_back_rounded,
-              color: appColors.textPrimary,
-            ),
+            child: Icon(Icons.arrow_back_rounded, color: appColors.textPrimary),
           ),
         ),
         actions: [
-          Padding(
+          SingleChildScrollView(
             padding: const EdgeInsets.only(right: 20),
             child: Center(
               child: InkWell(
-                onTap: (){
+                onTap: () {
                   _customerBottomSheetHelp.showBottomSheetHepl(context);
                 },
                 child: Text(
@@ -57,16 +56,13 @@ class SignUpPageView extends StatelessWidget {
         top: false,
         child: Form(
           key: vm.formKey,
-          child: SingleChildScrollView(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
               children: [
-
                 const SizedBox(height: 32),
 
-                // العنوان
-                 Text(
+                Text(
                   'Create your\naccount',
                   style: TextStyle(
                     fontSize: 34,
@@ -154,7 +150,7 @@ class SignUpPageView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
+                    Text(
                       'Already have an account? ',
                       style: TextStyle(
                         fontSize: 14,
@@ -163,10 +159,10 @@ class SignUpPageView extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-vm.cleanTextEditingControler();
+                        vm.cleanTextEditingControler();
                         Navigator.of(context).pop();
                       },
-                      child:  Text(
+                      child: Text(
                         'Log In',
                         style: TextStyle(
                           fontSize: 14,
@@ -180,7 +176,6 @@ vm.cleanTextEditingControler();
                 ),
 
                 const SizedBox(height: 32),
-
               ],
             ),
           ),
